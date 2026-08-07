@@ -1,138 +1,113 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Sparkles, Calendar, MapPin, ChevronDown } from 'lucide-react';
+import confetti from 'canvas-confetti';
+import { ArrowUpRight, ChevronDown, Sparkles } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventHero: React.FC = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0, tiltX: 0, tiltY: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const x = (clientX / window.innerWidth - 0.5) * 35;
-      const y = (clientY / window.innerHeight - 0.5) * 35;
-      const tiltX = (clientY / window.innerHeight - 0.5) * -12;
-      const tiltY = (clientX / window.innerWidth - 0.5) * 12;
-      setMousePos({ x, y, tiltX, tiltY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const handlePlatformRedirect = () => {
-    window.open(EVENT_CONFIG.PLATFORM_URL, '_blank');
+  const handleJoinClick = () => {
+    confetti({
+      particleCount: 80,
+      spread: 60,
+      origin: { y: 0.6 }
+    });
+    setTimeout(() => {
+      window.open(EVENT_CONFIG.REGISTRATION_URL, '_blank');
+    }, 300);
   };
 
-  const handleRegistrationRedirect = () => {
-    window.open(EVENT_CONFIG.REGISTRATION_URL, '_blank');
+  const handleSharePerspectiveClick = () => {
+    const el = document.getElementById('theme-question');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-28 pb-20 bg-mesh-dark starfield">
-      {/* Background Floating Purple Ambient Rays & Orbs */}
-      <div 
-        className="absolute inset-0 pointer-events-none transition-transform duration-700 ease-out"
-        style={{ transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0)` }}
-      >
-        {/* Glow Orb 1 */}
-        <div className="absolute top-1/4 left-1/4 w-[36rem] h-[36rem] rounded-full bg-purple-600/25 blur-[150px] animate-pulse-glow" />
+    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center pt-28 pb-20 bg-transparent">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         
-        {/* Glow Orb 2 */}
-        <div className="absolute bottom-1/4 right-1/4 w-[40rem] h-[40rem] rounded-full bg-indigo-600/20 blur-[180px] animate-pulse-glow" style={{ animationDelay: '3s' }} />
-
-        {/* Abstract Floating Skeuo-Glass Rings */}
-        <div className="absolute top-32 right-[12%] w-28 h-28 rounded-full border border-purple-400/30 skeuo-glass-card animate-float-slow hidden md:block opacity-70" />
-        <div className="absolute bottom-40 left-[10%] w-36 h-36 rounded-full border border-indigo-400/25 skeuo-inset-container animate-float-reverse hidden md:block opacity-60" />
-      </div>
-
-      {/* Grid Radial Mask Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
-
-      <div 
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center transition-transform duration-300 ease-out"
-        style={{
-          transform: `perspective(1000px) rotateX(${mousePos.tiltX}deg) rotateY(${mousePos.tiltY}deg)`
-        }}
-      >
-        {/* Event Date & Venue Badge */}
+        {/* Subtle Brand Kicker */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full skeuo-inset-container text-purple-300 text-xs font-bold tracking-wider uppercase mb-8 shadow-2xl border border-purple-500/30"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full editorial-inset text-[#6F3FF5] text-xs font-mono-tech uppercase tracking-[0.2em] mb-6 shadow-2xs bg-white/60 backdrop-blur-md"
         >
-          <span className="flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-purple-400" />
-            {EVENT_CONFIG.EVENT_DATE}
-          </span>
-          <span className="text-purple-500">•</span>
-          <span className="flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 text-purple-400" />
-            {EVENT_CONFIG.EVENT_VENUE}
-          </span>
+          <Sparkles className="w-3.5 h-3.5 text-[#6F3FF5]" />
+          <span>The Purple Movement Initiative</span>
         </motion.div>
 
-        {/* Event Name & Tagline */}
+        {/* Hero Serif Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1] max-w-4xl"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="font-serif-editorial text-5xl sm:text-7xl md:text-8xl font-normal tracking-tight text-[#1E1E1E] leading-[1.05] max-w-4xl"
         >
-          {EVENT_CONFIG.EVENT_NAME}
-          <span className="gradient-text-purple block mt-2 text-3xl sm:text-5xl md:text-6xl font-extrabold drop-shadow-[0_10px_20px_rgba(168,85,247,0.3)]">
-            {EVENT_CONFIG.EVENT_SUBTITLE}
-          </span>
+          BEYOND SYLLABUS
         </motion.h1>
 
-        {/* Short Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
+        {/* Subheading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-6 text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl font-light leading-relaxed drop-shadow"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-3 text-xl sm:text-2xl font-serif-editorial italic text-[#6F3FF5]"
         >
-          {EVENT_CONFIG.EVENT_DESCRIPTION}
-        </motion.p>
+          Building the Future of Education Together
+        </motion.h2>
 
-        {/* Primary Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        {/* Small Paragraph */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-6 text-base sm:text-lg text-[#737373] max-w-2xl font-normal leading-relaxed"
+        >
+          Bringing students, educators, industry, researchers, policymakers and communities together to explore the future of learning in the AI era.
+        </motion.p>
+
+        {/* Editorial Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          {/* Button 1: Explore Platform */}
-          <button
-            onClick={handlePlatformRedirect}
-            className="w-full sm:w-auto px-8 py-4 rounded-full skeuo-button-primary text-white font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-2 group shadow-2xl"
+          {/* Primary CTA */}
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            onClick={handleJoinClick}
+            className="w-full sm:w-auto px-8 py-4 rounded-full editorial-button-primary font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 group"
           >
-            <span>Explore Platform</span>
+            <span>Join the Movement</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+          </motion.button>
 
-          {/* Button 2: Register for Event */}
-          <button
-            onClick={handleRegistrationRedirect}
-            className="w-full sm:w-auto px-8 py-4 rounded-full skeuo-button-secondary text-white font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-2 group border border-white/20"
+          {/* Secondary CTA */}
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            onClick={handleSharePerspectiveClick}
+            className="w-full sm:w-auto px-8 py-4 rounded-full editorial-button-secondary text-[#1E1E1E] font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2"
           >
-            <Sparkles className="w-4 h-4 text-purple-400 group-hover:rotate-12 transition-transform" />
-            <span>Register for Event</span>
-          </button>
+            <span>Share Your Perspective</span>
+          </motion.button>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Quiet Scroll Indicator */}
         <motion.a
           href="#about"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="mt-16 text-slate-400 hover:text-purple-400 transition-colors flex flex-col items-center gap-1.5 text-xs uppercase tracking-widest font-semibold"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity }}
+          className="mt-20 text-[#737373] hover:text-[#6F3FF5] transition-colors flex flex-col items-center gap-1.5 text-[11px] font-mono-tech uppercase tracking-widest"
         >
-          <span>Scroll to Discover</span>
-          <ChevronDown className="w-4 h-4 text-purple-400" />
+          <span>Scroll to explore</span>
+          <ChevronDown className="w-4 h-4 text-[#6F3FF5]" />
         </motion.a>
       </div>
     </section>
   );
 };
-

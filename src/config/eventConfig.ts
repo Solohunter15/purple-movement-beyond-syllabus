@@ -1,27 +1,28 @@
 export const EVENT_CONFIG = {
-  // Configurable URLs - Do not hardcode elsewhere
-  PLATFORM_URL: 'TODO_PLATFORM_URL',
-  REGISTRATION_URL: 'TODO_REGISTRATION_URL',
-
-  // Event Details
   EVENT_NAME: 'Beyond Syllabus',
-  EVENT_TAGLINE: 'Learning Beyond Classrooms.\nBuilding Beyond Boundaries.',
-  EVENT_SUBTITLE: 'Learning Beyond Classrooms. Building Beyond Boundaries.',
-  EVENT_DESCRIPTION:
-    'A community-driven event bringing together students, industry experts, communities, and ecosystem partners to explore learning beyond traditional academics.',
+  SLOGAN: 'You Made Power Listen. Now Make the System Change.',
+  SUB_TAGLINE: 'Beyond Protest. Beyond Politics. Beyond Syllabus.',
+  CENTRAL_QUESTION: 'If you had ONE opportunity to redesign India’s education system for the AI era, what is the ONE structural change you would implement first—and why?',
   
-  EVENT_DATE: 'October 24–25, 2025',
-  EVENT_VENUE: 'Grand Innovation Pavilion & Global Virtual Stream',
+  // Key Dates
+  EVENT_DATE: 'August 15, 2026 (Online Forum) • Sept 5, 2026 (Physical Summit)',
+  AUGUST_15_DATE: 'August 15, 2026',
+  SEPTEMBER_5_DATE: 'September 5, 2026',
 
-  // Organization
-  ORGANIZATION: 'The Purple Movement',
-
-  // Social Links
-  SOCIALS: {
-    DISCORD: 'https://discord.gg/beyondsyllabus',
-    GITHUB: 'https://github.com/beyondsyllabus',
-    LINKEDIN: 'https://linkedin.com/company/beyondsyllabus',
-    TWITTER: 'https://twitter.com/beyondsyllabus',
-    EMAIL: 'event@beyondsyllabus.org'
-  }
-};
+  // Narrative Description
+  EVENT_DESCRIPTION: 'One resignation is not a revolution. Changing one minister doesn’t change the system. Beyond Syllabus brings together students, educators, industry, government, and parents to move from anger to action and rebuild institutions for the AI era.',
+  
+  // External URLs & Forms
+  REGISTRATION_URL: 'https://mulearn.org',
+  PLATFORM_URL: 'https://mulearn.org',
+  
+  // Ecosystem Stakeholders
+  STAKEHOLDERS: [
+    { name: 'Students', role: 'Co-Creators of Learning Pathways', icon: 'GraduationCap' },
+    { name: 'Educators & Faculty', role: 'Mentors & Facilitators', icon: 'BookOpen' },
+    { name: 'Academic Leadership', role: 'Institutional Reformers', icon: 'Building' },
+    { name: 'Industry & Founders', role: 'Capability Verification & Mentorship', icon: 'Briefcase' },
+    { name: 'Researchers & Policy', role: 'Evidence & Curriculum Architecture', icon: 'FileText' },
+    { name: 'Parents & Communities', role: 'Supportive Foundation', icon: 'Users' }
+  ]
+} as const;
