@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventThemeDark: React.FC = () => {
   return (
@@ -56,7 +57,7 @@ export const EventThemeDark: React.FC = () => {
             </span>
             
             <a
-              href="https://mulearn.org"
+              href={EVENT_CONFIG.PERSPECTIVE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 rounded-full editorial-button-primary text-xs font-mono-tech uppercase font-semibold tracking-wider flex items-center gap-1.5 shrink-0"

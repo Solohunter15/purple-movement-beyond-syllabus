@@ -17,8 +17,7 @@ export const EventHero: React.FC = () => {
   };
 
   const handleSharePerspectiveClick = () => {
-    const el = document.getElementById('theme-question');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    window.open(EVENT_CONFIG.PERSPECTIVE_URL, '_blank');
   };
 
   return (
