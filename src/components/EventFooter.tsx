@@ -12,7 +12,7 @@ export const EventFooter: React.FC = () => {
           
           {/* Left Column: Brand */}
           <div className="md:col-span-5 space-y-4">
-            <PurpleMovementLogo iconSize={36} textColor="dark" />
+            <PurpleMovementLogo iconSize={48} textColor="dark" textSize="large" />
             <p className="text-xs text-[#737373] max-w-sm leading-relaxed font-normal">
               Beyond Syllabus is a grassroots movement building an open, collaborative framework for education in the AI era.
             </p>

@@ -35,13 +35,13 @@ export const EventThemeDark: React.FC = () => {
           </span>
         </motion.h2>
 
-        {/* Central Question Glassmorphic Callout Box (Light Theme) */}
+        {/* Central Question Spatial Callout Box */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 p-8 sm:p-10 rounded-3xl editorial-glass-card bg-white/80 border border-black/10 shadow-xl text-left max-w-3xl"
+          className="mt-12 p-8 sm:p-10 rounded-3xl spatial-glass-card text-left max-w-3xl"
         >
           <span className="text-[10px] font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block mb-3 font-bold">
             // SUBMIT YOUR RESPONSE
@@ -60,7 +60,7 @@ export const EventThemeDark: React.FC = () => {
               href={EVENT_CONFIG.PERSPECTIVE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 rounded-full editorial-button-primary text-xs font-mono-tech uppercase font-semibold tracking-wider flex items-center gap-1.5 shrink-0"
+              className="px-6 py-2.5 rounded-full spatial-button-primary text-xs font-mono-tech uppercase font-semibold tracking-wider flex items-center gap-1.5 shrink-0 cursor-pointer"
             >
               <span>Submit Perspective</span>
               <span>↗</span>

@@ -35,15 +35,15 @@ export const EventNavbar: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 border ${
+          className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${
             scrolled
-              ? 'bg-white/85 backdrop-blur-xl border-black/10 shadow-md shadow-black/5 text-[#1E1E1E]'
+              ? 'spatial-glass-pill text-[#1E1E1E]'
               : 'bg-transparent border-transparent text-[#1E1E1E]'
           }`}
         >
           {/* Authentic Logo Left */}
           <a href="#hero" className="flex items-center gap-3">
-            <PurpleMovementLogo iconSize={34} textColor="dark" />
+            <PurpleMovementLogo iconSize={46} textColor="dark" textSize="large" />
             <span className="hidden sm:inline-block text-[10px] font-mono-tech uppercase tracking-[0.2em] text-[#737373] border-l border-black/10 pl-3">
               // BEYOND_SYLLABUS
             </span>
@@ -68,7 +68,7 @@ export const EventNavbar: React.FC = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleJoinClick}
-              className="px-5 py-2 rounded-full editorial-button-primary text-xs font-mono-tech uppercase tracking-wider font-semibold flex items-center gap-1.5"
+              className="px-5 py-2 rounded-full spatial-button-primary text-xs font-mono-tech uppercase tracking-wider font-semibold flex items-center gap-1.5 cursor-pointer"
             >
               <span>Join</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -96,7 +96,7 @@ export const EventNavbar: React.FC = () => {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden max-w-7xl mx-auto px-4 mt-2"
           >
-            <div className="editorial-glass-card bg-white/95 rounded-2xl p-6 border border-black/10 space-y-4 shadow-xl">
+            <div className="spatial-glass-card bg-white/95 rounded-2xl p-6 border border-black/10 space-y-4 shadow-xl">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -112,7 +112,7 @@ export const EventNavbar: React.FC = () => {
                   setMobileMenuOpen(false);
                   handleJoinClick();
                 }}
-                className="w-full py-3 rounded-full editorial-button-primary text-xs uppercase font-mono-tech font-semibold tracking-widest flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-full spatial-button-primary text-xs uppercase font-mono-tech font-semibold tracking-widest flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Join Movement</span>
                 <ArrowUpRight className="w-4 h-4" />

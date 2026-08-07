@@ -17,8 +17,8 @@ export const EventPartners: React.FC = () => {
           </h2>
         </div>
 
-        {/* Slow Infinite Grey Logo Slider */}
-        <div className="w-full overflow-hidden py-6 bg-white/40 backdrop-blur-md rounded-2xl border border-black/5 shadow-2xs">
+        {/* Spatial Logo Slider */}
+        <div className="w-full overflow-hidden py-6 spatial-glass-pill rounded-2xl border border-black/5 shadow-2xs">
           <div className="animate-marquee-slow flex items-center gap-16">
             {[...COMMUNITY_PARTNERS_CONFIG, ...COMMUNITY_PARTNERS_CONFIG].map((partner, idx) => (
               <motion.div
@@ -26,7 +26,7 @@ export const EventPartners: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-4 shrink-0 cursor-pointer group"
               >
-                <div className="w-12 h-12 rounded-xl editorial-inset bg-white p-2 flex items-center justify-center border border-black/5">
+                <div className="w-12 h-12 rounded-xl spatial-inset bg-white p-2 flex items-center justify-center border border-black/5">
                   <img
                     src={partner.logo}
                     alt={partner.name}

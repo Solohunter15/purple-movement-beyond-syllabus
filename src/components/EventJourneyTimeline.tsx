@@ -19,22 +19,16 @@ export const EventJourneyTimeline: React.FC = () => {
       description: 'First informal discussions exploring skill shortages and rigid examination boundaries in higher education.'
     },
     {
-      year: '2022',
-      title: 'Bridge the Gap',
-      subtitle: 'Statewide Symposium',
-      description: 'Bringing K-DISC, KTU, industry leads, and faculty together. Produced outcomes like 6-month internships.'
-    },
-    {
-      year: '2023',
+      year: '2021',
       title: 'μLearn Launch',
       subtitle: 'Peer Learning Ecosystem',
-      description: 'Building a decentralized student learning network enabling micro-quests, peer mentorship, and proof-of-work.'
+      description: 'Building a decentralized student learning network enabling micro-quests, peer mentorship, and proof-of-work karma points.'
     },
     {
-      year: '2024',
-      title: 'Beyond Syllabus Pilots',
-      subtitle: 'Flipped Classroom Sandbox',
-      description: 'Experimenting with AI-assisted self-learning tools and faculty mentor models across partner institutions.'
+      year: 'May 2024',
+      title: 'Bridge the Gap 1.0',
+      subtitle: 'Statewide Symposium',
+      description: 'Bringing K-DISC, KTU, industry leads, and faculty together. Main events concluded June 2024, producing outcomes like 6-month internships.'
     },
     {
       year: '2025',
@@ -44,8 +38,8 @@ export const EventJourneyTimeline: React.FC = () => {
     },
     {
       year: '2026',
-      title: 'Bridge the Gap 4.0',
-      subtitle: 'Beyond Syllabus Launch',
+      title: 'Beyond Syllabus',
+      subtitle: 'Bridge the Gap 4.0',
       description: 'Transitioning from protest to prototypes. Aug 15 National Consultation & Sept 5 Stakeholder Summit.'
     }
   ];

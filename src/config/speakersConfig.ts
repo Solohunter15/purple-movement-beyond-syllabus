@@ -15,7 +15,7 @@ export const FEATURED_SPEAKERS_CONFIG: Speaker[] = [
   {
     id: 'deepu-nath',
     name: 'Deepu S. Nath',
-    designation: 'Managing Director & Founder',
+    designation: 'Founder and Chief Volunteer',
     organization: 'The Purple Movement / µLearn',
     category: 'Ecosystem Leader',
     image: '/speakers/Deepu S Nath.jpg',

@@ -55,14 +55,14 @@ export const EventOverviewCards: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="editorial-glass-card rounded-3xl p-7 flex flex-col justify-between"
+                className="spatial-glass-card rounded-3xl p-7 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl editorial-inset flex items-center justify-center mb-6 text-[#6F3FF5]">
+                  <div className="w-12 h-12 rounded-2xl spatial-inset flex items-center justify-center mb-6 text-[#6F3FF5]">
                     <Icon className="w-6 h-6" />
                   </div>
                   
-                  <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#737373] block mb-1">
+                  <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#737373] block mb-1 font-semibold">
                     {card.tag}
                   </span>
 
@@ -77,7 +77,7 @@ export const EventOverviewCards: React.FC = () => {
 
                 <div className="mt-8 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono-tech text-[#737373]">
                   <span>EXPAND</span>
-                  <span>↗</span>
+                  <span className="text-[#6F3FF5]">↗</span>
                 </div>
               </motion.div>
             );

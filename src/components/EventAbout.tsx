@@ -41,8 +41,8 @@ export const EventAbout: React.FC = () => {
               <strong className="text-[#1E1E1E] font-medium">Beyond Syllabus</strong> is an open collaborative framework designed to unite students, teachers, academic leaders, industry mentors, researchers, and policymakers. Together, we are building an ecosystem where learning is continuous, capability is verified by proof-of-work, and education prepares learners for life.
             </p>
 
-            {/* Simple Connected Nodes Graphic (Minimal Abstract Illustration) */}
-            <div className="mt-8 p-6 rounded-2xl editorial-glass-card border border-black/5 flex items-center justify-between">
+            {/* Simple Spatial Connected Nodes Graphic */}
+            <div className="mt-8 p-6 rounded-2xl spatial-glass-card flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-12 flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border border-[#6F3FF5]/40 animate-ping" />

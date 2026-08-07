@@ -48,7 +48,7 @@ export const EventCTA: React.FC = () => {
           Whether you are a student, educator, founder, or policymaker, your perspective is essential to shaping the future of learning.
         </motion.p>
 
-        {/* Buttons */}
+        {/* Spatial Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export const EventCTA: React.FC = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
             onClick={handleJoinClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full editorial-button-primary font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-4 rounded-full spatial-button-primary font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 group cursor-pointer"
           >
             <span>Join Beyond Syllabus</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -72,7 +72,7 @@ export const EventCTA: React.FC = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
             onClick={handleSharePerspectiveClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full editorial-button-secondary text-[#1E1E1E] font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-4 rounded-full spatial-button-secondary text-[#1E1E1E] font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Share Your Perspective</span>
           </motion.button>

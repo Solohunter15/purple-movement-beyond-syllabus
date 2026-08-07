@@ -29,10 +29,10 @@ export const EventSpeakers: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.12 }}
-              className="editorial-glass-card rounded-3xl p-6 flex flex-col justify-between group"
+              className="spatial-glass-card rounded-3xl p-6 flex flex-col justify-between group"
             >
               <div>
-                {/* Large Editorial Portrait Frame */}
+                {/* Large Portrait Frame */}
                 <div className="relative w-full h-80 rounded-2xl overflow-hidden mb-6 border border-black/5 bg-slate-100 shadow-inner">
                   <img
                     src={speaker.image}
@@ -41,7 +41,7 @@ export const EventSpeakers: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
                   
-                  <span className="absolute bottom-3 left-3 text-[10px] font-mono-tech uppercase tracking-wider px-3 py-1 rounded-full bg-white/90 text-[#1E1E1E] backdrop-blur-md shadow-xs">
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono-tech uppercase tracking-wider px-3 py-1 rounded-full bg-white/90 text-[#1E1E1E] backdrop-blur-md shadow-xs font-semibold">
                     {speaker.category}
                   </span>
                 </div>
@@ -65,7 +65,7 @@ export const EventSpeakers: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono-tech text-[#737373]">
                 <span>KEYNOTE SPEAKER</span>
-                <span>BS-2026</span>
+                <span className="text-[#6F3FF5] font-semibold">BS-2026</span>
               </div>
             </motion.div>
           ))}
