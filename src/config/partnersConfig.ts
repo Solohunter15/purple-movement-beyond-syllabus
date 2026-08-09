@@ -22,7 +22,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     name: 'AI Evolve',
     category: 'AI Initiatives',
     logo: '/community-partners/ai-evolve.jpeg',
-    description: 'Accelerating AI readiness, research sprints, and hands-on skill development for student builders.',
+    description: 'Uniting students, researchers, and innovators to build AI solutions, foster a connected culture of innovation, and turn concepts into real-world impact.',
     rowOrder: 1
   },
   // Row 2: 3 Cards
