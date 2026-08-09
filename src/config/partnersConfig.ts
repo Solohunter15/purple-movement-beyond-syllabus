@@ -13,7 +13,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     id: 'part-ai-compassion',
     name: 'AI + Compassion',
     category: 'AI Initiatives',
-    logo: '/community-partners/AI + Compassion.jpg',
+    logo: '/community-partners/ai-compassion.jpg',
     description: 'Human-centric AI initiative exploring ethics, empathy, and technological empowerment for future generations.',
     rowOrder: 1
   },
@@ -21,7 +21,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     id: 'part-ai-evolve',
     name: 'AI Evolve',
     category: 'AI Initiatives',
-    logo: '/community-partners/AI Evolve.jpeg',
+    logo: '/community-partners/ai-evolve.jpeg',
     description: 'Accelerating AI readiness, research sprints, and hands-on skill development for student builders.',
     rowOrder: 1
   },
@@ -30,7 +30,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     id: 'part-hr-evolve',
     name: 'HR Evolve',
     category: 'HR & Talent',
-    logo: '/community-partners/HR Evolve.jpg',
+    logo: '/community-partners/hr-evolve.jpg',
     description: 'Connecting HR leaders, industry mentors, and student talent to reshape workplace readiness.',
     rowOrder: 2
   },
@@ -38,7 +38,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     id: 'part-kites-india',
     name: 'Kites India',
     category: 'Youth & Community',
-    logo: '/community-partners/Kites India.png',
+    logo: '/community-partners/kites-india.png',
     description: 'Youth movement inspiring social impact, volunteering, and community action across academic institutions.',
     rowOrder: 2
   },
@@ -46,7 +46,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     id: 'part-mulearn-foundation',
     name: 'MuLearn Foundation',
     category: 'Learning Ecosystem',
-    logo: '/community-partners/Mulearn Foundation.jpg',
+    logo: '/community-partners/mulearn-foundation.jpg',
     description: 'Peer-to-peer learning ecosystem powering student capability, micro-quests, and real-world proof-of-work.',
     rowOrder: 2
   }

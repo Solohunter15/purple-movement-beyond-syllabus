@@ -77,10 +77,6 @@ export const EventOutcomes: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono-tech text-[#737373]">
-                <span>OUTCOME_ARTIFACT</span>
-                <span>✓</span>
-              </div>
             </motion.div>
           ))}
         </div>
