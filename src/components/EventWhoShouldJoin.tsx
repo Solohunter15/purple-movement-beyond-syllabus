@@ -63,7 +63,7 @@ export const EventWhoShouldJoin: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
-            // WHO SHOULD JOIN
+            WHO SHOULD JOIN
           </span>
           <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
             One Ecosystem, Every Voice

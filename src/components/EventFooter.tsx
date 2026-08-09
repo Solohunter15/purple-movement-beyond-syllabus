@@ -17,7 +17,7 @@ export const EventFooter: React.FC = () => {
               Beyond Syllabus is a grassroots movement building an open, collaborative framework for education in the AI era.
             </p>
             <span className="text-[10px] font-mono-tech uppercase text-[#6F3FF5] tracking-widest block font-semibold">
-              // BEYOND_PROTEST_BEYOND_SYLLABUS
+              BEYOND PROTEST BEYOND SYLLABUS
             </span>
           </div>
 

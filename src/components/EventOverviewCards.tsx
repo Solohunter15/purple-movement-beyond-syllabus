@@ -7,25 +7,25 @@ export const EventOverviewCards: React.FC = () => {
     {
       icon: Target,
       title: 'Purpose',
-      tag: '01 // GOAL',
+      tag: '01 GOAL',
       description: 'Move from reactive protest to constructive reform by designing actionable, AI-era education prototypes.'
     },
     {
       icon: Users,
       title: 'Stakeholders',
-      tag: '02 // ECOSYSTEM',
+      tag: '02 ECOSYSTEM',
       description: 'Uniting students, teachers, industry leaders, researchers, policymakers, and communities into one collaborative framework.'
     },
     {
       icon: Layers,
       title: 'Framework',
-      tag: '03 // METHODOLOGY',
+      tag: '03 METHODOLOGY',
       description: 'Flipped classroom models, micro-quest skill verification, continuous peer mentorship, and institutional working groups.'
     },
     {
       icon: Award,
       title: 'Expected Outcomes',
-      tag: '04 // IMPACT',
+      tag: '04 IMPACT',
       description: 'Tangible policy recommendations, pilot initiatives in partner colleges, and state-wide working groups.'
     }
   ];
@@ -37,7 +37,7 @@ export const EventOverviewCards: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
-            // MOVEMENT ARCHITECTURE
+            MOVEMENT ARCHITECTURE
           </span>
           <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
             Event Highlights & Core Pillars

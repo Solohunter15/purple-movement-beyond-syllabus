@@ -10,7 +10,7 @@ export const EventSpeakers: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
-            // SPEAKERS & KEYNOTES
+            SPEAKERS & KEYNOTES
           </span>
           <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
             Voices Shaping the AI Era
@@ -65,7 +65,6 @@ export const EventSpeakers: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono-tech text-[#737373]">
                 <span>KEYNOTE SPEAKER</span>
-                <span className="text-[#6F3FF5] font-semibold">BS-2026</span>
               </div>
             </motion.div>
           ))}

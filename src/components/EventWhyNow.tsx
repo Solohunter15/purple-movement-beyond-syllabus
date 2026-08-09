@@ -17,7 +17,7 @@ export const EventWhyNow: React.FC = () => {
             className="lg:col-span-6"
           >
             <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block mb-3 font-semibold">
-              // WHY NOW?
+              WHY NOW?
             </span>
             
             <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E] leading-[1.1]">
@@ -51,12 +51,6 @@ export const EventWhyNow: React.FC = () => {
             <p>
               The AI era demands that we shift from an examination-centric society to a capability society. Rather than criticizing broken institutions from the outside, Beyond Syllabus brings every stakeholder to the table to build the alternative together.
             </p>
-
-            <div className="pt-4 flex items-center gap-6 text-xs font-mono-tech uppercase tracking-wider text-[#1E1E1E] font-semibold">
-              <span className="text-[#6F3FF5]">PROTEST → PROTOTYPE</span>
-              <span>•</span>
-              <span className="text-[#6F3FF5]">ANGER → ACTION</span>
-            </div>
           </motion.div>
 
         </div>

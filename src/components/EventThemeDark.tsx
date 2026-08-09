@@ -18,7 +18,7 @@ export const EventThemeDark: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-xs font-mono-tech uppercase tracking-[0.3em] text-[#6F3FF5] font-semibold mb-6 block"
         >
-          // THE CENTRAL QUESTION
+          THE CENTRAL QUESTION
         </motion.span>
 
         {/* Large Light Editorial Serif Title */}
@@ -44,7 +44,7 @@ export const EventThemeDark: React.FC = () => {
           className="mt-12 p-8 sm:p-10 rounded-3xl spatial-glass-card text-left max-w-3xl"
         >
           <span className="text-[10px] font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block mb-3 font-bold">
-            // SUBMIT YOUR RESPONSE
+            SUBMIT YOUR RESPONSE
           </span>
 
           <p className="font-serif-editorial text-xl sm:text-2xl text-[#1E1E1E] italic leading-relaxed">

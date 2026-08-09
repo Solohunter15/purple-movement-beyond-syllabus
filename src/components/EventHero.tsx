@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { ArrowUpRight, ChevronDown, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventHero: React.FC = () => {
@@ -41,17 +41,6 @@ export const EventHero: React.FC = () => {
           transform: `perspective(1200px) rotateX(${tilt.tiltX}deg) rotateY(${tilt.tiltY}deg)`
         }}
       >
-        {/* Subtle Brand Kicker */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full spatial-glass-pill text-[#6F3FF5] text-xs font-mono-tech uppercase tracking-[0.2em] mb-6 shadow-2xs bg-white/70 backdrop-blur-md"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-[#6F3FF5]" />
-          <span>The Purple Movement Initiative</span>
-        </motion.div>
-
         {/* Hero Serif Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

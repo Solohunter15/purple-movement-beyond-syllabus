@@ -18,7 +18,7 @@ export const EventAbout: React.FC = () => {
             className="lg:col-span-6"
           >
             <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block mb-3 font-semibold">
-              // ABOUT BEYOND SYLLABUS
+              ABOUT BEYOND SYLLABUS
             </span>
             <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E] leading-[1.1] italic">
               "Education should be a beginning, not a boundary."
@@ -53,9 +53,6 @@ export const EventAbout: React.FC = () => {
                   <p className="text-xs text-[#737373]">6 Stakeholders • 1 Shared Mission</p>
                 </div>
               </div>
-              <span className="text-xs font-mono-tech text-[#6F3FF5] font-semibold uppercase tracking-wider">
-                NODE_MATRIX_01
-              </span>
             </div>
           </motion.div>
 

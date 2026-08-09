@@ -45,7 +45,7 @@ export const EventNavbar: React.FC = () => {
           <a href="#hero" className="flex items-center gap-3">
             <PurpleMovementLogo iconSize={46} textColor="dark" textSize="large" />
             <span className="hidden sm:inline-block text-[10px] font-mono-tech uppercase tracking-[0.2em] text-[#737373] border-l border-black/10 pl-3">
-              // BEYOND_SYLLABUS
+              BEYOND SYLLABUS
             </span>
           </a>
 

@@ -42,7 +42,7 @@ export const EventOutcomes: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
-            // EXPECTED OUTCOMES
+            EXPECTED OUTCOMES
           </span>
           <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
             What We Hope To Build Together
@@ -65,7 +65,7 @@ export const EventOutcomes: React.FC = () => {
             >
               <div>
                 <span className="text-xs font-mono-tech font-bold text-[#6F3FF5] block mb-4">
-                  //{item.number}
+                  {item.number}
                 </span>
 
                 <h3 className="text-xl font-semibold text-[#1E1E1E] mb-3">

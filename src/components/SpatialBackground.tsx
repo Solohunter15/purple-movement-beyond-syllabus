@@ -33,17 +33,6 @@ export const SpatialBackground: React.FC = () => {
       <div className="absolute top-24 left-[10%] w-48 h-48 rounded-full border border-[#6F3FF5]/20 bg-white/40 backdrop-blur-md animate-float-slow opacity-60 hidden lg:block shadow-xs" />
       <div className="absolute top-[45%] right-[8%] w-64 h-64 rounded-3xl border border-purple-300/30 bg-purple-50/20 backdrop-blur-md rotate-12 animate-float-reverse opacity-50 hidden lg:block" />
       <div className="absolute top-[75%] left-[6%] w-56 h-56 rounded-full border-2 border-dashed border-[#6F3FF5]/20 animate-orbit opacity-40 hidden lg:block" />
-
-      {/* 5. Floating Watermark Pills */}
-      <div className="absolute top-36 right-[16%] opacity-30 font-mono-tech text-[10px] tracking-[0.3em] font-bold uppercase text-[#6F3FF5] bg-white/70 px-4 py-1.5 rounded-full border border-[#6F3FF5]/20 hidden xl:block shadow-2xs">
-        // FROM_PROTEST_TO_PURPOSE
-      </div>
-      <div className="absolute top-[40%] left-[4%] opacity-25 font-mono-tech text-[10px] tracking-[0.3em] font-bold uppercase text-[#6F3FF5] bg-white/70 px-4 py-1.5 rounded-full border border-[#6F3FF5]/20 hidden xl:block shadow-2xs">
-        // CAPABILITY_COMMONS
-      </div>
-      <div className="absolute top-[70%] right-[5%] opacity-25 font-mono-tech text-[10px] tracking-[0.3em] font-bold uppercase text-[#6F3FF5] bg-white/70 px-4 py-1.5 rounded-full border border-[#6F3FF5]/20 hidden xl:block shadow-2xs">
-        // BEYOND_SYLLABUS_INITIATIVE
-      </div>
     </div>
   );
 };
