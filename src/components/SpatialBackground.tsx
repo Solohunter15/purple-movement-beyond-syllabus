@@ -28,11 +28,6 @@ export const SpatialBackground: React.FC = () => {
 
       {/* 3. Spatial Architectural Light Grid Matrix */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#6F3FF50a_1px,transparent_1px),linear-gradient(to_bottom,#6F3FF50a_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_50%,#000_80%,transparent_100%)]" />
-
-      {/* 4. Floating 3D Geometric Spatial Nodes & Glass Rings */}
-      <div className="absolute top-24 left-[10%] w-48 h-48 rounded-full border border-[#6F3FF5]/20 bg-white/40 backdrop-blur-md animate-float-slow opacity-60 hidden lg:block shadow-xs" />
-      <div className="absolute top-[45%] right-[8%] w-64 h-64 rounded-3xl border border-purple-300/30 bg-purple-50/20 backdrop-blur-md rotate-12 animate-float-reverse opacity-50 hidden lg:block" />
-      <div className="absolute top-[75%] left-[6%] w-56 h-56 rounded-full border-2 border-dashed border-[#6F3FF5]/20 animate-orbit opacity-40 hidden lg:block" />
     </div>
   );
 };

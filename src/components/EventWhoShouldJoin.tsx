@@ -57,7 +57,7 @@ export const EventWhoShouldJoin: React.FC = () => {
   ];
 
   return (
-    <section id="who-should-join" className="py-28 relative overflow-hidden bg-transparent">
+    <section id="stakeholders" className="py-28 relative overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

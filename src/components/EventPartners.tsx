@@ -16,12 +16,12 @@ export const EventPartners: React.FC = () => {
             Organisations Powering the Movement
           </h2>
           <p className="text-base sm:text-lg text-[#737373]">
-            Collaborative ecosystems and partners driving learning innovation.
+            Hover over any partner logo to learn more about their mission and role.
           </p>
         </div>
 
-        {/* Editorial Partner Card Grid / Stack */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Clean Partner Logo Card Grid (Sample Reference Style) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {COMMUNITY_PARTNERS_CONFIG.map((partner, idx) => (
             <motion.div
               key={partner.id}
@@ -29,35 +29,30 @@ export const EventPartners: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="spatial-glass-card rounded-3xl p-6 flex flex-col justify-between group"
+              className="group relative bg-white/90 backdrop-blur-md rounded-[2.5rem] border border-black/5 p-8 flex flex-col items-center justify-center min-h-[320px] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer overflow-hidden"
             >
-              <div>
-                {/* Logo Frame matching speaker card styling */}
-                <div className="relative w-full h-64 rounded-2xl overflow-hidden mb-6 border border-black/5 bg-white flex items-center justify-center p-8 shadow-inner">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                  
-                  <span className="absolute bottom-3 left-3 text-[10px] font-mono-tech uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-[#1E1E1E] border border-black/5 shadow-xs font-semibold">
-                    {partner.category}
-                  </span>
-                </div>
+              {/* Centered Logo Frame (matching sample reference image) */}
+              <div className="w-36 h-36 rounded-2xl bg-white p-4 border border-black/5 shadow-xs flex items-center justify-center transition-all duration-500 group-hover:scale-90 group-hover:-translate-y-2">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-w-full max-h-full object-contain transition-transform duration-500"
+                />
+              </div>
 
-                {/* Partner Info */}
-                <h3 className="font-serif-editorial text-2xl text-[#1E1E1E] font-normal group-hover:text-[#6F3FF5] transition-colors mb-2">
+              {/* Revealed on Hover: Partner Name & 2-3 Line Bio */}
+              <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out text-center flex flex-col items-center overflow-hidden w-full">
+                <span className="text-[10px] font-mono-tech uppercase tracking-wider px-3 py-0.5 rounded-full bg-[#6F3FF5]/10 text-[#6F3FF5] font-semibold mb-1">
+                  {partner.category}
+                </span>
+
+                <h3 className="font-serif-editorial text-2xl text-[#1E1E1E] font-medium mb-1">
                   {partner.name}
                 </h3>
 
-                <p className="text-xs text-[#737373] leading-relaxed mb-4">
+                <p className="text-xs text-[#737373] leading-relaxed line-clamp-3 max-w-xs font-normal">
                   {partner.description}
                 </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono-tech text-[#737373]">
-                <span>COMMUNITY PARTNER</span>
-                <span className="text-[#6F3FF5] font-semibold">ECOSYSTEM</span>
               </div>
             </motion.div>
           ))}

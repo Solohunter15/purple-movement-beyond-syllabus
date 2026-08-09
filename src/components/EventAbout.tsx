@@ -41,19 +41,27 @@ export const EventAbout: React.FC = () => {
               <strong className="text-[#1E1E1E] font-medium">Beyond Syllabus</strong> is an open collaborative framework designed to unite students, teachers, academic leaders, industry mentors, researchers, and policymakers. Together, we are building an ecosystem where learning is continuous, capability is verified by proof-of-work, and education prepares learners for life.
             </p>
 
-            {/* Simple Spatial Connected Nodes Graphic */}
-            <div className="mt-8 p-6 rounded-2xl spatial-glass-card flex items-center justify-between">
+            {/* Simple Spatial Connected Nodes Graphic - Clickable to Stakeholders Section */}
+            <a
+              href="#stakeholders"
+              className="mt-8 p-6 rounded-2xl spatial-glass-card flex items-center justify-between group cursor-pointer hover:border-[#6F3FF5]/40 transition-all hover:scale-[1.01] block"
+            >
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-12 flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border border-[#6F3FF5]/40 animate-ping" />
                   <div className="w-4 h-4 rounded-full bg-[#6F3FF5]" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1E1E1E]">Collaborative Ecosystem</h4>
+                  <h4 className="text-sm font-semibold text-[#1E1E1E] group-hover:text-[#6F3FF5] transition-colors">
+                    Collaborative Ecosystem
+                  </h4>
                   <p className="text-xs text-[#737373]">6 Stakeholders • 1 Shared Mission</p>
                 </div>
               </div>
-            </div>
+              <span className="text-xs text-[#6F3FF5] font-semibold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Explore Stakeholders →
+              </span>
+            </a>
           </motion.div>
 
         </div>

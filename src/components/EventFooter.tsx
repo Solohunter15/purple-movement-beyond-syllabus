@@ -14,11 +14,8 @@ export const EventFooter: React.FC = () => {
           <div className="md:col-span-5 space-y-4">
             <PurpleMovementLogo iconSize={48} textColor="dark" textSize="large" />
             <p className="text-xs text-[#737373] max-w-sm leading-relaxed font-normal">
-              Beyond Syllabus is a grassroots movement building an open, collaborative framework for education in the AI era.
+              The Purple Movement is a grassroots initiative building an open, collaborative framework for education in the AI era.
             </p>
-            <span className="text-[10px] font-mono-tech uppercase text-[#6F3FF5] tracking-widest block font-semibold">
-              BEYOND PROTEST BEYOND SYLLABUS
-            </span>
           </div>
 
           {/* Quick Links */}
