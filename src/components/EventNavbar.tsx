@@ -18,9 +18,9 @@ export const EventNavbar: React.FC = () => {
 
   const navLinks = [
     { label: 'JOURNEY', href: '#journey' },
-    { label: 'VOICES', href: '#speakers' },
+    { label: 'STUDENTS', href: '#students' },
     { label: 'COMMONS', href: '#commons' },
-    { label: 'PROTOTYPES', href: '#outcomes' },
+    { label: 'PROTOTYPES', href: '#action-layer' },
     { label: 'OUTCOMES', href: '#outcomes' }
   ];
 

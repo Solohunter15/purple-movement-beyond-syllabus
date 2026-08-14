@@ -17,5 +17,4 @@ export interface EventConfig {
   };
 }
 
-export type { Speaker, Speaker as SpeakerPlaceholder } from '../config/speakersConfig';
 export type { PartnerLogo } from '../config/partnersConfig';

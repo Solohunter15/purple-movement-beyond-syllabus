@@ -8,7 +8,6 @@ import { EventKnowledgeCommons } from './components/EventKnowledgeCommons';
 import { EventActionLayer } from './components/EventActionLayer';
 import { EventThemeDark } from './components/EventThemeDark';
 import { EventOverviewCards } from './components/EventOverviewCards';
-import { EventSpeakers } from './components/EventSpeakers';
 import { EventStudentStakeholders } from './components/EventStudentStakeholders';
 import { EventPartners } from './components/EventPartners';
 import { EventOutcomes } from './components/EventOutcomes';
@@ -95,13 +94,10 @@ export function App() {
           {/* 7. Pillars & Overview */}
           <EventOverviewCards />
 
-          {/* 8. Speakers & Voices */}
-          <EventSpeakers />
-
-          {/* 9. Student Stakeholders (New Section) */}
+          {/* 8. Students & Student Communities */}
           <EventStudentStakeholders />
 
-          {/* 10. Community Partners (Now with HR Evolve & FOSS United logos) */}
+          {/* 9. Community Partners (Now with HR Evolve & FOSS United logos) */}
           <EventPartners />
 
           {/* 11. Deliverables & Outcomes */}

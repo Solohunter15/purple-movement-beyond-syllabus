@@ -12,6 +12,20 @@ interface StudentStakeholder {
 export const EventStudentStakeholders: React.FC = () => {
   const students: StudentStakeholder[] = [
     {
+      name: 'Arundhathi Krishna',
+      designation: 'Curator, Global Shapers Kochi Hub (WEF) & Program Manager',
+      organization: 'TinkerHub Foundation',
+      bio: 'Leading campus community initiatives, Women in Tech programs, and directing TinkHerHack at TinkerHub Foundation.',
+      image: '/students/arundhathi-krishna.jpg'
+    },
+    {
+      name: 'Claire C. John',
+      designation: 'Community & Academic Director',
+      organization: 'Beyond Syllabus Initiative',
+      bio: 'Leading pedagogy innovation, flipped classroom models, and teacher-mentorship networks for future-ready education.',
+      image: '/students/claire-c-john.jpg'
+    },
+    {
       name: 'Diya Bhatt',
       designation: 'Final Year B.Tech Student & AWS SBG Lead',
       organization: 'LBSITW',
@@ -114,10 +128,10 @@ export const EventStudentStakeholders: React.FC = () => {
             CO-CREATORS & REPRESENTATIVES
           </span>
           <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight">
-            STUDENT STAKEHOLDERS
+            STUDENTS & STUDENT COMMUNITIES
           </h2>
           <p className="text-sm text-[#9F9CAE] font-sans">
-            Students serving as the foundational stakeholders chosen by our community to lead academic and capability transformation.
+            Students and student communities serving as the foundational stakeholders chosen to lead academic and capability transformation.
           </p>
         </div>
 
