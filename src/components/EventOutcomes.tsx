@@ -59,7 +59,7 @@ export const EventOutcomes: React.FC = () => {
               key={item.title}
               initial={{ opacity: 0, y: 40, scale: 0.96 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, margin: "-80px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
               className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/5 group"
             >
@@ -75,11 +75,6 @@ export const EventOutcomes: React.FC = () => {
                 <p className="text-xs text-[#9F9CAE] leading-relaxed font-sans font-normal">
                   {item.description}
                 </p>
-              </div>
-
-              <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono-tech text-[#F4F3F7]/70 font-bold group-hover:text-[#F4F3F7] transition-colors">
-                <span>DELIVERABLE</span>
-                <span className="text-[#00F5A0]">↗</span>
               </div>
             </motion.div>
           ))}

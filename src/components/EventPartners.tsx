@@ -39,7 +39,7 @@ export const EventPartners: React.FC = () => {
                   opacity: { duration: 0.6, delay: idx * 0.05 }
                 }
               }}
-              viewport={{ once: false, margin: "-60px" }}
+              viewport={{ once: true }}
               className="group relative bg-[#111019] rounded-2xl border-2 border-white/5 p-4 flex flex-col items-center justify-center min-h-[170px] hover:border-[#8000FF] transition-all duration-300 cursor-pointer overflow-hidden shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/5"
             >
               {/* Centered Logo Frame */}

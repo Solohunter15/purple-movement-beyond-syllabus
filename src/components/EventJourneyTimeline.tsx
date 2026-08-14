@@ -70,7 +70,7 @@ export const EventJourneyTimeline: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-white/70"
           >
@@ -81,7 +81,7 @@ export const EventJourneyTimeline: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="text-right"
           >
@@ -100,7 +100,7 @@ export const EventJourneyTimeline: React.FC = () => {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "calc(100% - 4rem)" }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
             className="absolute top-[3rem] left-8 h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0 origin-left"
           />
@@ -108,7 +108,7 @@ export const EventJourneyTimeline: React.FC = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             variants={{
               hidden: {},
               visible: {

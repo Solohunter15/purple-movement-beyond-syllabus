@@ -142,7 +142,7 @@ export const EventStudentStakeholders: React.FC = () => {
               key={student.name}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, margin: "-80px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: (idx % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="bg-[#111019] rounded-2xl border-2 border-white/5 p-5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/5 group"
             >

@@ -34,7 +34,7 @@ export const EventThemeDark: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-xs sm:text-sm font-mono-tech uppercase font-bold tracking-[0.2em] text-white/80 max-w-2xl mb-8"
         >
@@ -54,7 +54,7 @@ export const EventThemeDark: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <button

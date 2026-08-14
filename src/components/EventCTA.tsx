@@ -47,7 +47,7 @@ export const EventCTA: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-8 text-base sm:text-lg text-[#9F9CAE] max-w-2xl font-normal leading-relaxed font-sans"
         >
@@ -58,7 +58,7 @@ export const EventCTA: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >

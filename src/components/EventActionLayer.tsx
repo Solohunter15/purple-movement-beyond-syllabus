@@ -62,7 +62,7 @@ export const EventActionLayer: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-[#F4F3F7]/60 mb-8"
         >
@@ -75,7 +75,7 @@ export const EventActionLayer: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-6 space-y-4"
           >
@@ -94,7 +94,7 @@ export const EventActionLayer: React.FC = () => {
             variants={listContainerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             className="lg:col-span-6 border-t-2 border-b-2 border-white/20 divide-y divide-white/20"
           >
             {actionRows.map((row) => (

@@ -21,9 +21,6 @@ export const EventHero: React.FC = () => {
 
   // Scroll Parallax Hooks
   const { scrollY } = useScroll();
-  const titleY = useTransform(scrollY, [0, 500], [0, -70]);
-  const titleOpacity = useTransform(scrollY, [0, 450], [1, 0.35]);
-  const titleScale = useTransform(scrollY, [0, 500], [1, 0.96]);
   const badgeY = useTransform(scrollY, [0, 500], [0, 60]);
   const badgeRotate = useTransform(scrollY, [0, 800], [0, 150]);
   const bannerY = useTransform(scrollY, [0, 500], [0, -40]);
@@ -52,16 +49,12 @@ export const EventHero: React.FC = () => {
             </motion.div>
 
             {/* Massive Display Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              style={{ y: titleY, opacity: titleOpacity, scale: titleScale }}
+            <div
               className="font-display font-black uppercase text-7xl sm:text-9xl md:text-[11rem] leading-[0.82] tracking-tighter select-none"
             >
               <div className="text-[#F4F3F7]">BEYOND</div>
               <div className="text-[#8000FF]">SYLLABUS</div>
-            </motion.div>
+            </div>
 
             {/* Subheading */}
             <motion.h2

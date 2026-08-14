@@ -28,7 +28,7 @@ export const EventKnowledgeCommons: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -15 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             OPEN ARCHIVE / 03
@@ -37,7 +37,7 @@ export const EventKnowledgeCommons: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: 15 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             SEARCHABLE. LINKABLE. PUBLIC.
@@ -52,7 +52,7 @@ export const EventKnowledgeCommons: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             className="lg:col-span-8"
           >
             <h2 className="font-display font-black text-7xl sm:text-9xl md:text-[10rem] leading-[0.82] uppercase tracking-tight text-white select-none">
@@ -74,7 +74,7 @@ export const EventKnowledgeCommons: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-4 flex justify-end"
           >

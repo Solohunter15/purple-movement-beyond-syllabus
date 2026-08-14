@@ -53,7 +53,7 @@ export const EventOverviewCards: React.FC = () => {
                 key={card.title}
                 initial={{ opacity: 0, y: 50, rotateX: 18 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                viewport={{ once: false, margin: "-100px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 style={{ transformStyle: 'preserve-3d' }}
                 className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/5 group"
