@@ -25,7 +25,7 @@ export const EventNavbar: React.FC = () => {
   ];
 
   const handleJoinClick = () => {
-    window.open(EVENT_CONFIG.REGISTRATION_URL, '_blank');
+    window.open(EVENT_CONFIG.YOUTUBE_URL, '_blank');
   };
 
   return (

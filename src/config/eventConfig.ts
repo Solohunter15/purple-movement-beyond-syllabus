@@ -5,7 +5,7 @@ export const EVENT_CONFIG = {
   CENTRAL_QUESTION: 'If you had ONE opportunity to redesign India’s education system for the AI era, what is the ONE structural change you would implement first—and why?',
   
   // Key Dates
-  EVENT_DATE: 'August 15, 2026 (Online Forum) • Sept 5, 2026 (Physical Summit)',
+  EVENT_DATE: 'July – December 2026',
   AUGUST_15_DATE: 'August 15, 2026',
   SEPTEMBER_5_DATE: 'September 5, 2026',
 
@@ -15,6 +15,7 @@ export const EVENT_CONFIG = {
   // External URLs & Forms
   REGISTRATION_URL: 'https://purple-movement.com/',
   PERSPECTIVE_URL: 'https://forms.gle/sN4NeDo9vdNmUGsHA',
+  YOUTUBE_URL: 'https://www.youtube.com/@ThePurpleMovement',
   PLATFORM_URL: 'https://purple-movement.com/',
   
   // Ecosystem Stakeholders

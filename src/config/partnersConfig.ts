@@ -68,7 +68,7 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     id: 'part-aws-sbg',
     name: 'AWS Student Builder Group',
     category: 'Learning Ecosystem',
-    logo: '/community-partners/aws-sbg.svg',
+    logo: '/community-partners/aws-sbg.png',
     description: 'A student-led community focused on cloud computing, AWS technologies, and hands-on builder projects.',
     rowOrder: 2
   },

@@ -75,11 +75,6 @@ export const EventOverviewCards: React.FC = () => {
                     {card.description}
                   </p>
                 </div>
-
-                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono-tech text-[#F4F3F7]/70 font-bold group-hover:text-[#F4F3F7] transition-colors">
-                  <span>FRAMEWORK</span>
-                  <span className="text-[#00F5A0]">↗</span>
-                </div>
               </motion.div>
             );
           })}

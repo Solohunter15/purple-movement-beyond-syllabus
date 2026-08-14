@@ -79,7 +79,7 @@ export const EventKnowledgeCommons: React.FC = () => {
             className="lg:col-span-4 flex justify-end"
           >
             <a
-              href="https://mlearn.foundation"
+              href="https://app.mulearn.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-44 h-44 rounded-full flex flex-col items-center justify-center text-center p-4 transition-all duration-300 cursor-pointer"

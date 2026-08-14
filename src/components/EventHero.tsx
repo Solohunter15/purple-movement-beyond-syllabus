@@ -16,7 +16,7 @@ export const EventHero: React.FC = () => {
   };
 
   const handleWatchLatestClick = () => {
-    window.open(EVENT_CONFIG.PERSPECTIVE_URL, '_blank');
+    window.open(EVENT_CONFIG.YOUTUBE_URL, '_blank');
   };
 
   // Scroll Parallax Hooks
@@ -47,7 +47,7 @@ export const EventHero: React.FC = () => {
             >
               <span className="text-[#F4F3F7]/80">BRIDGE THE GAP 4.0</span>
               <span className="px-2.5 py-0.5 rounded-full bg-[#8000FF]/25 text-[#00F5A0] border border-[#8000FF]/40">
-                AUG—DEC 2026
+                JULY—DEC 2026
               </span>
             </motion.div>
 
@@ -70,7 +70,7 @@ export const EventHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-lg sm:text-2xl font-bold uppercase tracking-tight text-[#F4F3F7]/90 max-w-2xl font-sans"
             >
-              A FOUR-MONTH JOURNEY TO REDESIGN EDUCATION FOR THE NEXT GENERATION.
+              July - Dec | A SIX-MONTH JOURNEY TO REDESIGN EDUCATION FOR THE NEXT GENERATION.
             </motion.h2>
 
             {/* Action Buttons */}
