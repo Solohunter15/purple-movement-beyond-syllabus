@@ -104,10 +104,10 @@ export const EventStudentStakeholders: React.FC = () => {
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-16 space-y-2">
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
-            STUDENT STAKEHOLDERS
+            CO-CREATORS & REPRESENTATIVES
           </span>
           <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#0A0A0C] tracking-tight">
-            CO-CREATORS & REPRESENTATIVES
+            STUDENT STAKEHOLDERS
           </h2>
           <p className="text-sm text-[#666666] font-sans">
             Students serving as the foundational stakeholders chosen by our community to lead academic and capability transformation.
