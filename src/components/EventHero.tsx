@@ -161,7 +161,7 @@ export const EventHero: React.FC = () => {
       {/* Bottom Timeline Date Stepper Ticker */}
       <div className="w-full border-t border-white/10 pt-4 pb-2 mt-12 bg-[#07060A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start gap-6 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/70 overflow-x-auto no-scrollbar">
-          <span>JULY</span>
+          <span className="text-[#8000FF]">JULY</span>
           <span>→</span>
           <span className="text-[#8000FF]">AUG 15</span>
           <span>→</span>

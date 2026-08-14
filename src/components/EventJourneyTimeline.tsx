@@ -16,9 +16,9 @@ export const EventJourneyTimeline: React.FC = () => {
     {
       number: '01',
       date: 'JULY',
-      action: 'CONVENE',
-      audience: 'Stakeholder Representatives',
-      question: '"The Conversation Begins."'
+      action: 'INITIATE',
+      audience: 'Ecosystem Stakeholders',
+      question: '"Starting the conversation between students & educators."'
     },
     {
       number: '02',
