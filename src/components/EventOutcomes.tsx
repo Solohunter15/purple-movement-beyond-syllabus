@@ -36,18 +36,18 @@ export const EventOutcomes: React.FC = () => {
   ];
 
   return (
-    <section id="outcomes" className="py-28 relative overflow-hidden bg-transparent">
+    <section id="outcomes" className="py-28 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
-            EXPECTED OUTCOMES
+        <div className="text-left max-w-3xl mb-16 space-y-2">
+          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
+            EXPECTED OUTCOMES / PROTOTYPES
           </span>
-          <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
-            What We Hope To Build Together
+          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#0A0A0C] tracking-tight">
+            WHAT WE HOPE TO BUILD
           </h2>
-          <p className="text-base sm:text-lg text-[#737373]">
+          <p className="text-sm text-[#666666] font-sans">
             Concrete artifacts and ongoing initiatives, not just speeches.
           </p>
         </div>
@@ -61,22 +61,26 @@ export const EventOutcomes: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.08 }}
-              className="editorial-glass-card rounded-3xl p-7 flex flex-col justify-between"
+              className="bg-white rounded-2xl p-7 border-2 border-black/10 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm"
             >
               <div>
-                <span className="text-xs font-mono-tech font-bold text-[#6F3FF5] block mb-4">
+                <span className="text-sm font-mono-tech font-bold text-[#8000FF] block mb-4">
                   {item.number}
                 </span>
 
-                <h3 className="text-xl font-semibold text-[#1E1E1E] mb-3">
+                <h3 className="font-display font-black text-2xl uppercase text-[#0A0A0C] mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-[#737373] leading-relaxed font-normal">
+                <p className="text-xs text-[#666666] leading-relaxed font-sans font-normal">
                   {item.description}
                 </p>
               </div>
 
+              <div className="mt-8 pt-4 border-t border-black/10 flex items-center justify-between text-[10px] font-mono-tech text-[#0A0A0C] font-bold">
+                <span>DELIVERABLE</span>
+                <span className="text-[#8000FF]">↗</span>
+              </div>
             </motion.div>
           ))}
         </div>

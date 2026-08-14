@@ -1,66 +1,71 @@
 import React from 'react';
-import { PurpleMovementLogo } from './PurpleMovementLogo';
-import { ArrowUpRight } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventFooter: React.FC = () => {
   return (
-    <footer className="py-16 border-t border-black/5 bg-[#FAFAF8] text-[#1E1E1E]">
+    <footer className="bg-[#8000FF] text-white border-t-8 border-black pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start pb-12 border-b border-black/5">
+        {/* Main Footer Row (Screenshot 1) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
           
-          {/* Left Column: Brand */}
-          <div className="md:col-span-5 space-y-4">
-            <PurpleMovementLogo iconSize={48} textColor="dark" textSize="large" />
-            <p className="text-xs text-[#737373] max-w-sm leading-relaxed font-normal">
-              The Purple Movement is a grassroots initiative building an open, collaborative framework for education in the AI era.
-            </p>
+          {/* Left Column: Stacked Display Title */}
+          <div className="md:col-span-4">
+            <h3 className="font-display font-black text-5xl sm:text-6xl uppercase tracking-tighter text-white leading-[0.88] select-none">
+              <div>BEYOND</div>
+              <div>SYLLABUS</div>
+            </h3>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono-tech uppercase font-bold text-[#1E1E1E] tracking-wider">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-xs text-[#737373]">
-              <li><a href="#about" className="hover:text-[#6F3FF5] transition-colors">About</a></li>
-              <li><a href="#journey" className="hover:text-[#6F3FF5] transition-colors">Our Journey</a></li>
-              <li><a href="#speakers" className="hover:text-[#6F3FF5] transition-colors">Speakers</a></li>
-              <li><a href="#partners" className="hover:text-[#6F3FF5] transition-colors">Community Partners</a></li>
-              <li><a href="#outcomes" className="hover:text-[#6F3FF5] transition-colors">Expected Outcomes</a></li>
+          {/* Center Column: Tagline Quotes */}
+          <div className="md:col-span-4 space-y-1 text-sm font-medium text-white/90 font-sans pt-2">
+            <p>From protest to prototype.</p>
+            <p>From problems to possibilities.</p>
+          </div>
+
+          {/* Right Column: 2-Column Links */}
+          <div className="md:col-span-4 grid grid-cols-2 gap-8 text-xs font-mono-tech text-white/90 pt-2">
+            
+            {/* Col 1 */}
+            <ul className="space-y-3">
+              <li><a href="#journey" className="hover:text-black transition-colors">Journey</a></li>
+              <li><a href="#about" className="hover:text-black transition-colors">Conversations</a></li>
+              <li><a href="#action-layer" className="hover:text-black transition-colors">Prototypes</a></li>
+              <li>
+                <a
+                  href={EVENT_CONFIG.REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 font-bold hover:text-black transition-colors"
+                >
+                  Participate
+                </a>
+              </li>
             </ul>
-          </div>
 
-          {/* Contact & Socials */}
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono-tech uppercase font-bold text-[#1E1E1E] tracking-wider">
-              Connect & Join
-            </h4>
-            <div className="space-y-2 text-xs text-[#737373]">
-              <p>Built with μLearn Foundation & Community Partners</p>
-              <a
-                href={EVENT_CONFIG.REGISTRATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[#6F3FF5] font-semibold hover:underline"
-              >
-                <span>Join the Movement</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
+            {/* Col 2 */}
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={EVENT_CONFIG.REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black transition-colors"
+                >
+                  Live
+                </a>
+              </li>
+              <li><a href="#commons" className="hover:text-black transition-colors">Knowledge Commons</a></li>
+              <li><a href="#outcomes" className="hover:text-black transition-colors">Outcomes</a></li>
+            </ul>
+
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono-tech text-[#737373] gap-4">
-          <p>© {new Date().getFullYear()} The Purple Movement. Open Collaborative Initiative.</p>
-          <div className="flex items-center gap-6">
-            <span>Aug 15 & Sept 5, 2026</span>
-            <span>•</span>
-            <span>Education Transformation</span>
-          </div>
+        {/* Bottom Line & Copyright (Screenshot 1) */}
+        <div className="pt-6 border-t border-white/20 flex items-center justify-between text-[11px] font-mono-tech text-white/80 uppercase font-bold tracking-widest">
+          <span>THE PURPLE MOVEMENT · 2026</span>
         </div>
 
       </div>

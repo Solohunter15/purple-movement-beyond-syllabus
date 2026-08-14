@@ -1,24 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventHero: React.FC = () => {
-  const [tilt, setTilt] = useState({ tiltX: 0, tiltY: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const tiltX = (clientY / window.innerHeight - 0.5) * -6;
-      const tiltY = (clientX / window.innerWidth - 0.5) * 6;
-      setTilt({ tiltX, tiltY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const handleJoinClick = () => {
+  const handleEnterConversationClick = () => {
     confetti({
       particleCount: 80,
       spread: 60,
@@ -29,90 +15,152 @@ export const EventHero: React.FC = () => {
     }, 300);
   };
 
-  const handleSharePerspectiveClick = () => {
+  const handleWatchLatestClick = () => {
     window.open(EVENT_CONFIG.PERSPECTIVE_URL, '_blank');
   };
 
   return (
-    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center pt-28 pb-20 bg-transparent">
-      <div
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center transition-transform duration-500 ease-out"
-        style={{
-          transform: `perspective(1200px) rotateX(${tilt.tiltX}deg) rotateY(${tilt.tiltY}deg)`
-        }}
-      >
-        {/* Hero Serif Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-serif-editorial text-5xl sm:text-7xl md:text-8xl font-normal tracking-tight text-[#1E1E1E] leading-[1.05] max-w-4xl"
-        >
-          BEYOND SYLLABUS
-        </motion.h1>
+    <section id="hero" className="relative min-h-screen w-full bg-[#FAF9FA] text-[#0A0A0C] pt-32 pb-16 flex flex-col justify-between overflow-hidden">
+      
+      {/* Main Content Area */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          {/* Left Column: Headlines & CTAs */}
+          <div className="lg:col-span-9 space-y-6">
+            
+            {/* Top Pill Tag */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-3 text-xs font-mono-tech uppercase font-bold tracking-wider"
+            >
+              <span className="text-[#0A0A0C]">BRIDGE THE GAP 4.0</span>
+              <span className="px-2.5 py-0.5 rounded-full bg-[#8000FF]/10 text-[#8000FF]">
+                AUG—DEC 2026
+              </span>
+            </motion.div>
 
-        {/* Subheading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-3 text-xl sm:text-2xl font-serif-editorial italic text-[#6F3FF5]"
-        >
-          Building the Future of Education Together
-        </motion.h2>
+            {/* Massive Display Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-display font-black uppercase text-7xl sm:text-9xl md:text-[11rem] leading-[0.82] tracking-tighter select-none"
+            >
+              <div className="text-[#0A0A0C]">BEYOND</div>
+              <div className="text-[#8000FF]">SYLLABUS</div>
+            </motion.div>
 
-        {/* Small Paragraph */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 text-base sm:text-lg text-[#737373] max-w-2xl font-normal leading-relaxed"
-        >
-          Bringing students, educators, industry, researchers, policymakers and communities together to explore the future of learning in the AI era.
-        </motion.p>
+            {/* Subheading */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-lg sm:text-2xl font-bold uppercase tracking-tight text-[#0A0A0C] max-w-2xl font-sans"
+            >
+              A FOUR-MONTH JOURNEY TO REDESIGN EDUCATION FOR THE NEXT GENERATION.
+            </motion.h2>
 
-        {/* Spatial Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-        >
-          {/* Primary CTA */}
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            onClick={handleJoinClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full spatial-button-primary font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 group cursor-pointer"
-          >
-            <span>Join the Movement</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </motion.button>
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="pt-4 flex flex-wrap items-center gap-4"
+            >
+              {/* Primary Purple Button */}
+              <button
+                onClick={handleEnterConversationClick}
+                className="px-7 py-3.5 bg-[#8000FF] hover:bg-[#6c00db] text-white text-xs font-mono-tech uppercase font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all duration-200 shadow-md hover:scale-[1.02]"
+              >
+                <span>ENTER THE CONVERSATION</span>
+                <span>↗</span>
+              </button>
 
-          {/* Secondary CTA */}
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            onClick={handleSharePerspectiveClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full spatial-button-secondary text-[#1E1E1E] font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>Share Your Perspective</span>
-          </motion.button>
-        </motion.div>
+              {/* Secondary White Button with Black Border */}
+              <button
+                onClick={handleWatchLatestClick}
+                className="px-7 py-3.5 bg-white hover:bg-black/5 text-[#0A0A0C] border-2 border-[#0A0A0C] text-xs font-mono-tech uppercase font-bold tracking-wider cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+              >
+                WATCH THE LATEST SESSION
+              </button>
+            </motion.div>
 
-        {/* Quiet Scroll Indicator */}
-        <motion.a
-          href="#about"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity }}
-          className="mt-20 text-[#737373] hover:text-[#6F3FF5] transition-colors flex flex-col items-center gap-1.5 text-[11px] font-mono-tech uppercase tracking-widest"
-        >
-          <span>Scroll to explore</span>
-          <ChevronDown className="w-4 h-4 text-[#6F3FF5]" />
-        </motion.a>
+          </div>
+
+          {/* Right Column: Floating Sidebar Banner & Circular Interactive Badge (Screenshot 1) */}
+          <div className="hidden lg:flex lg:col-span-3 justify-end relative h-full min-h-[460px]">
+            
+            {/* Vertical Sideways Banner Block */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="absolute right-0 top-0 bottom-0 w-28 bg-[#8000FF] text-white flex items-center justify-center shadow-2xl rounded-l-xs overflow-hidden"
+            >
+              <span className="font-display font-black text-4xl tracking-widest uppercase whitespace-nowrap transform rotate-90 origin-center text-white/90">
+                GENERATION THAT QUESTIONS
+              </span>
+            </motion.div>
+
+            {/* Interactive Circular Badge Overlay */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
+              className="absolute bottom-4 right-12 z-20 group cursor-pointer"
+            >
+              <div className="relative w-52 h-52 rounded-full bg-[#8000FF] p-3 shadow-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                {/* Outer Ring */}
+                <div className="absolute inset-2 rounded-full border-2 border-white/20 animate-spin-slow" />
+                
+                {/* Circular Text */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg className="w-full h-full p-2" viewBox="0 0 100 100">
+                    <path
+                      id="circlePath"
+                      d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                      fill="none"
+                    />
+                    <text className="text-[7.5px] font-mono-tech font-bold uppercase tracking-widest fill-white">
+                      <textPath href="#circlePath" startOffset="0%">
+                        A GENERATION THAT BUILDS • A GENERATION THAT BUILDS •
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+
+                {/* Inner Crisp White Question Circle */}
+                <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 z-10">
+                  <span className="font-display font-black text-6xl text-[#8000FF] leading-none select-none">
+                    ?
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+
+        </div>
       </div>
+
+      {/* Bottom Timeline Date Stepper Ticker */}
+      <div className="w-full border-t border-black/10 pt-4 pb-2 mt-12 bg-[#FAF9FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start gap-6 text-xs font-mono-tech uppercase font-bold text-[#0A0A0C]/70 overflow-x-auto no-scrollbar">
+          <span className="text-[#8000FF]">AUG 15</span>
+          <span>→</span>
+          <span>SEP 05</span>
+          <span>→</span>
+          <span>OCT 02</span>
+          <span>→</span>
+          <span>NOV 14</span>
+          <span>→</span>
+          <span className="text-[#8000FF]">DEC</span>
+        </div>
+      </div>
+
     </section>
   );
 };

@@ -1,62 +1,81 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import confetti from 'canvas-confetti';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventThemeDark: React.FC = () => {
+  const handleJoinClick = () => {
+    confetti({
+      particleCount: 90,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+    setTimeout(() => {
+      window.open(EVENT_CONFIG.REGISTRATION_URL, '_blank');
+    }, 300);
+  };
+
   return (
-    <section id="theme-question" className="py-24 relative overflow-hidden bg-transparent text-[#1E1E1E]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="theme-question" className="py-32 relative overflow-hidden bg-[#000000] text-white border-t border-white/10 flex flex-col justify-between">
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center my-auto">
         
-        {/* Single Cohesive Question Card Structure */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        {/* Top Centered Subtitle (Screenshot 3) */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="spatial-glass-card rounded-[2.5rem] p-8 sm:p-12 text-center border border-black/10 shadow-xl bg-white/80 backdrop-blur-md flex flex-col items-center"
+          transition={{ duration: 0.5 }}
+          className="text-xs sm:text-sm font-mono-tech uppercase font-bold tracking-[0.2em] text-white/80 max-w-2xl mb-8"
         >
-          {/* Section Tag */}
-          <span className="text-xs font-mono-tech uppercase tracking-[0.3em] text-[#6F3FF5] font-semibold mb-4 block">
-            THE CENTRAL QUESTION
-          </span>
+          WHAT IF THE FUTURE OF EDUCATION IS NOT SOMETHING WE WAIT FOR?
+        </motion.p>
 
-          {/* Large Light Editorial Serif Title */}
-          <h2 className="font-serif-editorial text-3xl sm:text-5xl md:text-6xl font-normal leading-[1.15] text-[#1E1E1E] max-w-3xl">
-            Power Listened.{' '}
-            <span className="block mt-2 italic text-[#6F3FF5]">
-              What Must We Build Together Next?
-            </span>
-          </h2>
+        {/* Massive Center Headline (Screenshot 3) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-display font-black text-7xl sm:text-9xl md:text-[11rem] leading-[0.82] uppercase tracking-tighter select-none mb-12"
+        >
+          <div className="text-white">WHAT IF</div>
+          <div className="text-[#8000FF]">WE BUILD IT?</div>
+        </motion.div>
 
-          {/* Central Question Prompt */}
-          <div className="mt-8 pt-8 border-t border-black/10 w-full max-w-2xl text-center">
-            <span className="text-[10px] font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block mb-3 font-bold">
-              SUBMIT YOUR RESPONSE
-            </span>
-
-            <p className="font-serif-editorial text-lg sm:text-2xl text-[#1E1E1E] italic leading-relaxed">
-              "If you had ONE opportunity to redesign India's education system for the AI era, what is the ONE structural change you would implement first—and why?"
-            </p>
-
-            <div className="mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
-              <span className="text-xs font-sans text-[#737373] text-left">
-                Open Consultation • Submissions incorporated into policy recommendations
-              </span>
-              
-              <a
-                href={EVENT_CONFIG.PERSPECTIVE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full spatial-button-primary text-xs font-mono-tech uppercase font-semibold tracking-wider flex items-center gap-2 shrink-0 cursor-pointer"
-              >
-                <span>Submit Perspective</span>
-                <span>↗</span>
-              </a>
-            </div>
-          </div>
+        {/* Electric Mint Green Action Button (Screenshot 3) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
+          <button
+            onClick={handleJoinClick}
+            className="px-8 py-4 bg-[#00F5A0] hover:bg-[#00d084] text-[#000000] text-xs font-mono-tech uppercase font-black tracking-widest flex items-center gap-2 cursor-pointer transition-all duration-300 shadow-xl hover:scale-105 rounded-xs"
+          >
+            <span>JOIN THE MOVEMENT</span>
+            <span>↗</span>
+          </button>
         </motion.div>
 
       </div>
+
+      {/* Date Ticker at Bottom (Screenshot 3) */}
+      <div className="w-full border-t border-white/10 pt-6 pb-2 mt-20 bg-[#000000]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-6 text-xs font-mono-tech uppercase font-bold text-white/50 overflow-x-auto no-scrollbar">
+          <span className="text-[#8000FF]">AUG 15</span>
+          <span>→</span>
+          <span>SEP 05</span>
+          <span>→</span>
+          <span className="text-[#00F5A0]">OCT 02</span>
+          <span>→</span>
+          <span>NOV 14</span>
+          <span>→</span>
+          <span className="text-[#8000FF]">DEC</span>
+        </div>
+      </div>
+
     </section>
   );
 };

@@ -2,11 +2,14 @@
 
 @layer base {
   :root {
-    --bg-primary: #FAFAF8;
-    --text-primary: #1E1E1E;
-    --text-muted: #737373;
-    --accent-purple: #6F3FF5;
-    --accent-glow: rgba(111, 63, 245, 0.12);
+    --bg-primary: #FAF9FA;
+    --bg-dark: #000000;
+    --text-primary: #0A0A0C;
+    --text-muted: #666666;
+    --accent-purple: #8000FF;
+    --accent-purple-vivid: #7C00FF;
+    --accent-mint: #00F5A0;
+    --accent-mint-dark: #00D084;
   }
 
   html {
@@ -23,7 +26,16 @@
   }
 }
 
-/* Custom Editorial Typography */
+/* Custom High Contrast Editorial & Brutalist Display Typography */
+.font-display {
+  font-family: 'Bebas Neue', 'Syne', 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-syne {
+  font-family: 'Syne', 'Inter', sans-serif;
+}
+
 .font-serif-editorial {
   font-family: 'Instrument Serif', Georgia, serif;
 }
@@ -34,6 +46,29 @@
 
 .font-mono-tech {
   font-family: 'Space Grotesk', monospace;
+}
+
+/* Color Utilities */
+.bg-purple-vivid {
+  background-color: #8000FF;
+}
+
+.text-purple-vivid {
+  color: #8000FF;
+}
+
+.bg-mint-accent {
+  background-color: #00F5A0;
+}
+
+.text-mint-accent {
+  color: #00F5A0;
+}
+
+/* Sideways Vertical Text Utility */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 /* Custom Minimal Scrollbar */

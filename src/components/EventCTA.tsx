@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { ArrowUpRight } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventCTA: React.FC = () => {
@@ -21,20 +20,20 @@ export const EventCTA: React.FC = () => {
   };
 
   return (
-    <section id="cta" className="py-32 relative overflow-hidden bg-transparent">
+    <section id="cta" className="py-32 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
         
-        {/* Large Clean Serif Headline */}
+        {/* Massive Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-serif-editorial text-4xl sm:text-6xl md:text-7xl font-normal text-[#1E1E1E] leading-[1.1] max-w-4xl"
+          className="font-display font-black text-5xl sm:text-7xl md:text-8xl text-[#0A0A0C] uppercase leading-[0.88] max-w-4xl tracking-tight"
         >
-          Education cannot be transformed by one stakeholder.{' '}
-          <span className="block mt-2 italic text-[#6F3FF5]">
-            Let's build it together.
+          EDUCATION CANNOT BE TRANSFORMED BY ONE STAKEHOLDER.{' '}
+          <span className="block mt-4 text-[#8000FF]">
+            LET'S BUILD IT TOGETHER.
           </span>
         </motion.h2>
 
@@ -43,12 +42,12 @@ export const EventCTA: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 text-base sm:text-lg text-[#737373] max-w-2xl font-normal leading-relaxed"
+          className="mt-8 text-base sm:text-lg text-[#666666] max-w-2xl font-normal leading-relaxed font-sans"
         >
           Whether you are a student, educator, founder, or policymaker, your perspective is essential to shaping the future of learning.
         </motion.p>
 
-        {/* Spatial Buttons */}
+        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,26 +55,20 @@ export const EventCTA: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
+          <button
             onClick={handleJoinClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full spatial-button-primary font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 group cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 bg-[#8000FF] hover:bg-[#6c00db] text-white text-xs font-mono-tech uppercase font-bold tracking-widest flex items-center justify-center gap-2 cursor-pointer transition-all shadow-md hover:scale-[1.02]"
           >
-            <span>Join Beyond Syllabus</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </motion.button>
+            <span>JOIN BEYOND SYLLABUS</span>
+            <span>↗</span>
+          </button>
 
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
+          <button
             onClick={handleSharePerspectiveClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full spatial-button-secondary text-[#1E1E1E] font-medium text-xs tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-black/5 text-[#0A0A0C] border-2 border-[#0A0A0C] text-xs font-mono-tech uppercase font-bold tracking-widest flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-[1.02]"
           >
-            <span>Share Your Perspective</span>
-          </motion.button>
+            <span>SHARE YOUR PERSPECTIVE</span>
+          </button>
         </motion.div>
 
       </div>

@@ -4,23 +4,23 @@ import { COMMUNITY_PARTNERS_CONFIG } from '../config/partnersConfig';
 
 export const EventPartners: React.FC = () => {
   return (
-    <section id="partners" className="py-20 relative overflow-hidden bg-transparent border-t border-black/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="partners" className="py-20 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 space-y-2">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
+        <div className="text-left max-w-3xl mb-12 space-y-2">
+          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
             COMMUNITY PARTNERS
           </span>
-          <h2 className="font-serif-editorial text-3xl sm:text-5xl text-[#1E1E1E]">
-            Organisations Powering the Movement
+          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#0A0A0C] tracking-tight">
+            ORGANISATIONS POWERING THE MOVEMENT
           </h2>
-          <p className="text-xs sm:text-sm text-[#737373]">
+          <p className="text-xs sm:text-sm text-[#666666] font-sans">
             Hover over any partner card to explore their mission.
           </p>
         </div>
 
-        {/* Compact Partner Logo Cards Grid (5 Cards Row Layout on Desktop) */}
+        {/* Compact Partner Logo Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {COMMUNITY_PARTNERS_CONFIG.map((partner, idx) => (
             <motion.div
@@ -29,10 +29,10 @@ export const EventPartners: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className="group relative bg-white/90 backdrop-blur-md rounded-2xl border border-black/5 p-4 flex flex-col items-center justify-center min-h-[170px] shadow-2xs hover:shadow-md transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative bg-white rounded-2xl border-2 border-black/10 p-4 flex flex-col items-center justify-center min-h-[170px] hover:border-[#8000FF] transition-all duration-300 cursor-pointer overflow-hidden shadow-xs hover:shadow-md"
             >
-              {/* Compact Centered Logo Frame */}
-              <div className="w-24 h-24 rounded-xl bg-white p-2 border border-black/5 shadow-2xs flex items-center justify-center transition-all duration-300 group-hover:scale-80 group-hover:-translate-y-2 shrink-0 overflow-hidden">
+              {/* Centered Logo Frame */}
+              <div className="w-24 h-24 rounded-xl bg-white p-2 border border-black/5 flex items-center justify-center transition-all duration-300 group-hover:scale-80 group-hover:-translate-y-2 shrink-0 overflow-hidden">
                 <img
                   src={partner.logo}
                   alt={partner.name}
@@ -40,17 +40,17 @@ export const EventPartners: React.FC = () => {
                 />
               </div>
 
-              {/* Revealed on Hover: Name & 2-3 Line Bio */}
+              {/* Revealed on Hover */}
               <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-36 transition-all duration-300 ease-in-out text-center flex flex-col items-center overflow-hidden w-full mt-1">
-                <span className="text-[8px] font-mono-tech uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#6F3FF5]/10 text-[#6F3FF5] font-semibold mb-1">
+                <span className="text-[8px] font-mono-tech uppercase tracking-wider px-2 py-0.5 rounded-xs bg-[#8000FF]/10 text-[#8000FF] font-bold mb-1">
                   {partner.category}
                 </span>
 
-                <h3 className="font-serif-editorial text-lg text-[#1E1E1E] font-medium mb-1 leading-tight">
+                <h3 className="font-display font-black text-lg text-[#0A0A0C] uppercase mb-1 leading-tight">
                   {partner.name}
                 </h3>
 
-                <p className="text-[11px] text-[#737373] leading-snug line-clamp-3 font-normal">
+                <p className="text-[11px] text-[#666666] leading-snug line-clamp-3 font-sans">
                   {partner.description}
                 </p>
               </div>

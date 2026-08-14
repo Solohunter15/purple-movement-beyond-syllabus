@@ -1,118 +1,150 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
-interface TimelineStep {
-  year: string;
-  title: string;
-  subtitle: string;
-  description: string;
+interface JourneyPhase {
+  number: string;
+  date: string;
+  action: string;
+  audience: string;
+  question: string;
+  badge?: string;
+  isMint?: boolean;
 }
 
 export const EventJourneyTimeline: React.FC = () => {
-  const [activeIdx, setActiveIdx] = useState<number>(3); // Default active step
-
-  const steps: TimelineStep[] = [
+  const phases: JourneyPhase[] = [
     {
-      year: '2020',
-      title: 'Initial Dialogue',
-      subtitle: 'Recognizing Education Gaps',
-      description: 'First informal discussions exploring skill shortages and rigid examination boundaries in higher education.'
+      number: '01',
+      date: 'AUG 15',
+      action: 'LISTEN',
+      audience: 'Students + Student Communities',
+      question: '"What needs to change?"'
     },
     {
-      year: '2021',
-      title: 'μLearn Launch',
-      subtitle: 'Peer Learning Ecosystem',
-      description: 'Building a decentralized student learning network enabling micro-quests, peer mentorship, and proof-of-work karma points.'
+      number: '02',
+      date: 'SEP 05',
+      action: 'QUESTION',
+      audience: 'Academics + Policymakers',
+      question: '"What should education become?"'
     },
     {
-      year: 'May 2024',
-      title: 'Bridge the Gap 1.0',
-      subtitle: 'Statewide Symposium',
-      description: 'Bringing K-DISC, KTU, industry leads, and faculty together. Main events concluded June 2024, producing outcomes like 6-month internships.'
+      number: '03',
+      date: 'OCT 02',
+      action: 'CONNECT',
+      audience: 'Industry + Global Community',
+      question: '"What capabilities will the future demand?"',
+      badge: '24-HOUR GLOBAL RELAY'
     },
     {
-      year: '2025',
-      title: 'Student Movement',
-      subtitle: 'Youth Voice Realized',
-      description: 'Students stood united across the state, proving that courage can make power listen and demand system change.'
+      number: '04',
+      date: 'NOV 14',
+      action: 'BUILD',
+      audience: 'All Stakeholders',
+      question: '"What can we actually build?"'
     },
     {
-      year: '2026',
-      title: 'Beyond Syllabus',
-      subtitle: 'Bridge the Gap 4.0',
-      description: 'Transitioning from protest to prototypes. Aug 15 National Consultation & Sept 5 Stakeholder Summit.'
+      number: '05',
+      date: 'DECEMBER',
+      action: 'ACT',
+      audience: 'Recommendations + Working Prototypes',
+      question: '"Submission to the relevant Union Ministry."',
+      isMint: true
     }
   ];
 
   return (
-    <section id="journey" className="py-28 relative overflow-hidden bg-transparent">
+    <section id="journey" className="py-28 relative overflow-hidden bg-[#000000] text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
-            OUR JOURNEY
-          </span>
-          <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
-            Continuing a Journey, Not Starting From Scratch
-          </h2>
-          <p className="text-base sm:text-lg text-[#737373] font-normal">
-            This movement is built upon years of experimentation, policy outcomes, and community learning.
-          </p>
+        {/* Top Tag & Main Headline (Screenshot 2) */}
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-20">
+          
+          {/* Top Left Tag */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-white/70"
+          >
+            THE JOURNEY / 02
+          </motion.div>
+
+          {/* Massive Display Title Right */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-right"
+          >
+            <h2 className="font-display font-black text-6xl sm:text-8xl md:text-[6.5rem] leading-[0.88] uppercase tracking-tight">
+              <div className="text-white">CONVERSATION</div>
+              <div className="text-[#8000FF]">ACCUMULATES.</div>
+            </h2>
+          </motion.div>
+
         </div>
 
-        {/* Horizontal Timeline Bar */}
-        <div className="relative pt-8 pb-12 overflow-x-auto no-scrollbar">
+        {/* Horizontal Timeline Bar (Screenshot 2) */}
+        <div className="relative pt-12 pb-16 overflow-x-auto no-scrollbar">
           
-          {/* Connecting Line */}
-          <div className="absolute top-[4.5rem] left-0 right-0 h-[2px] bg-black/10 z-0" />
-          
-          <div className="flex items-start justify-between min-w-[56rem] gap-6 relative z-10 px-4">
-            {steps.map((step, idx) => {
-              const isActive = activeIdx === idx;
-              return (
-                <div
-                  key={step.year}
-                  onMouseEnter={() => setActiveIdx(idx)}
-                  className="flex-1 cursor-pointer group flex flex-col items-center text-center"
-                >
-                  {/* Step Year Badge */}
-                  <span className={`text-xs font-mono-tech font-bold uppercase mb-3 transition-colors ${isActive ? 'text-[#6F3FF5]' : 'text-[#737373]'}`}>
-                    {step.year}
-                  </span>
+          {/* Connecting Line (Purple for 01-04, Mint Green for 05) */}
+          <div className="absolute top-[3rem] left-8 right-8 h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0" />
 
-                  {/* Interactive Dot Node */}
-                  <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
-                    isActive
-                      ? 'bg-[#6F3FF5] border-[#6F3FF5] shadow-[0_0_15px_rgba(111,63,245,0.4)] scale-110'
-                      : 'bg-white border-black/20 group-hover:border-[#6F3FF5]'
-                  }`}>
-                    <div className={`w-2.5 h-2.5 rounded-full ${isActive ? 'bg-white' : 'bg-black/20 group-hover:bg-[#6F3FF5]'}`} />
+          <div className="flex items-start justify-between min-w-[64rem] relative z-10 px-4 gap-8">
+            {phases.map((phase) => {
+              const isMint = phase.isMint;
+              return (
+                <div key={phase.number} className="flex-1 flex flex-col items-start group">
+                  
+                  {/* Numbered Circle Node */}
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-mono-tech text-xs font-bold transition-transform duration-300 group-hover:scale-110 mb-6 shadow-lg ${
+                      isMint
+                        ? 'bg-[#00F5A0] text-[#000000] ring-4 ring-[#00F5A0]/20'
+                        : 'bg-[#8000FF] text-white ring-4 ring-[#8000FF]/20'
+                    }`}
+                  >
+                    {phase.number}
                   </div>
 
-                  {/* Title & Subtitle */}
-                  <h3 className={`mt-4 text-base font-semibold transition-colors ${isActive ? 'text-[#1E1E1E]' : 'text-[#737373]'}`}>
-                    {step.title}
-                  </h3>
-                  <span className="text-[11px] text-[#737373] font-medium block mt-0.5">
-                    {step.subtitle}
+                  {/* Date Badge */}
+                  <span
+                    className={`text-xs font-mono-tech font-bold uppercase tracking-wider mb-2 ${
+                      isMint ? 'text-[#00F5A0]' : 'text-[#8000FF]'
+                    }`}
+                  >
+                    {phase.date}
                   </span>
 
-                  {/* Expanded Detail Box on Hover/Active */}
-                  <motion.div
-                    initial={false}
-                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 8, height: isActive ? 'auto' : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden mt-3 w-full max-w-xs"
-                  >
-                    <div className="p-4 rounded-xl editorial-glass-card border border-black/5 text-left text-xs text-[#737373] leading-relaxed shadow-sm">
-                      {step.description}
+                  {/* Action Headline */}
+                  <h3 className="font-display font-black text-3xl sm:text-4xl text-white uppercase tracking-tight mb-2">
+                    {phase.action}
+                  </h3>
+
+                  {/* Audience Subtitle */}
+                  <p className="text-xs text-white/80 font-bold mb-4 min-h-[32px]">
+                    {phase.audience}
+                  </p>
+
+                  {/* Optional Mint Green Tag Badge (Screenshot 2: Node 03) */}
+                  {phase.badge && (
+                    <div className="mb-4 inline-block px-3 py-1 bg-[#00F5A0] text-[#000000] text-[10px] font-mono-tech uppercase font-bold tracking-wider rounded-xs">
+                      {phase.badge}
                     </div>
-                  </motion.div>
+                  )}
+
+                  {/* Question Quote */}
+                  <p className="text-xs text-white/50 italic leading-relaxed">
+                    {phase.question}
+                  </p>
+
                 </div>
               );
             })}
           </div>
+
         </div>
 
       </div>

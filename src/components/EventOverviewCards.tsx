@@ -31,20 +31,20 @@ export const EventOverviewCards: React.FC = () => {
   ];
 
   return (
-    <section id="overview" className="py-28 relative overflow-hidden bg-transparent">
+    <section id="overview" className="py-28 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block font-semibold">
+        <div className="text-left max-w-3xl mb-16 space-y-2">
+          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
             MOVEMENT ARCHITECTURE
           </span>
-          <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E]">
-            Event Highlights & Core Pillars
+          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#0A0A0C] tracking-tight">
+            CORE PILLARS
           </h2>
         </div>
 
-        {/* 4 Glass Cards Grid */}
+        {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, idx) => {
             const Icon = card.icon;
@@ -55,29 +55,29 @@ export const EventOverviewCards: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="spatial-glass-card rounded-3xl p-7 flex flex-col justify-between"
+                className="bg-white rounded-2xl p-7 border-2 border-black/10 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl spatial-inset flex items-center justify-center mb-6 text-[#6F3FF5]">
+                  <div className="w-12 h-12 rounded-xl bg-[#8000FF]/10 flex items-center justify-center mb-6 text-[#8000FF]">
                     <Icon className="w-6 h-6" />
                   </div>
                   
-                  <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#737373] block mb-1 font-semibold">
+                  <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#8000FF] block mb-1 font-bold">
                     {card.tag}
                   </span>
 
-                  <h3 className="text-xl font-semibold text-[#1E1E1E] mb-3">
+                  <h3 className="font-display font-black text-2xl uppercase text-[#0A0A0C] mb-3">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-[#737373] font-normal leading-relaxed">
+                  <p className="text-xs text-[#666666] font-normal leading-relaxed font-sans">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono-tech text-[#737373]">
-                  <span>EXPAND</span>
-                  <span className="text-[#6F3FF5]">↗</span>
+                <div className="mt-8 pt-4 border-t border-black/10 flex items-center justify-between text-[10px] font-mono-tech text-[#0A0A0C] font-bold">
+                  <span>FRAMEWORK</span>
+                  <span className="text-[#8000FF]">↗</span>
                 </div>
               </motion.div>
             );

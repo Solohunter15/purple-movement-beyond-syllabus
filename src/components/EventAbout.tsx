@@ -3,63 +3,91 @@ import { motion } from 'framer-motion';
 
 export const EventAbout: React.FC = () => {
   return (
-    <section id="about" className="py-28 relative overflow-hidden bg-transparent">
+    <section id="about" className="py-24 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
+      
+      {/* Top Right Decorative Purple Accent Arc (Screenshot 5) */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#8000FF] rounded-bl-full pointer-events-none opacity-90 transform translate-x-12 -translate-y-12" />
+
+      {/* Top Date Stepper Ticker */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
+        <div className="flex items-center gap-4 text-xs font-mono-tech uppercase font-bold text-[#0A0A0C]/60 tracking-wider">
+          <span className="text-[#8000FF]">AUG 15</span>
+          <span>→</span>
+          <span>SEP 05</span>
+          <span>→</span>
+          <span>OCT 02</span>
+          <span>→</span>
+          <span>NOV 14</span>
+          <span>→</span>
+          <span className="text-[#8000FF]">DEC</span>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Tag Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-[#0A0A0C]/70 mb-6"
+        >
+          THE PROPOSITION / 01
+        </motion.div>
+
         {/* Split Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Large Serif Headline */}
+          {/* Left Column: Massive Headline (Screenshot 5) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-6"
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7"
           >
-            <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#6F3FF5] block mb-3 font-semibold">
-              ABOUT BEYOND SYLLABUS
-            </span>
-            <h2 className="font-serif-editorial text-4xl sm:text-6xl text-[#1E1E1E] leading-[1.1] italic">
-              "Education should be a beginning, not a boundary."
+            <h2 className="font-display font-black text-6xl sm:text-8xl md:text-[6.5rem] leading-[0.88] uppercase tracking-tight text-[#0A0A0C]">
+              <div>NOT ANOTHER</div>
+              <div>DISCUSSION ABOUT</div>
+              <div className="text-[#8000FF]">WHAT IS BROKEN.</div>
             </h2>
           </motion.div>
 
-          {/* Right Column: Narrative Content & Connected Node Illustration */}
+          {/* Right Column: Proposition Paragraph (Screenshot 5) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-6 space-y-6 text-[#737373] text-base sm:text-lg leading-relaxed font-normal"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 space-y-6 pt-2"
           >
-            <p>
-              <strong className="text-[#1E1E1E] font-medium">The Purple Movement</strong> began with a simple realization: student voices across India were demanding more than administrative updates or exam question fixes. They were demanding an education system that values capability over compliance.
+            <p className="text-base sm:text-xl font-bold text-[#0A0A0C] leading-snug font-sans">
+              Beyond Syllabus is a public process for turning collective intelligence into credible alternatives for education.
             </p>
 
-            <p>
-              <strong className="text-[#1E1E1E] font-medium">Beyond Syllabus</strong> is an open collaborative framework designed to unite students, teachers, academic leaders, industry mentors, researchers, and policymakers. Together, we are building an ecosystem where learning is continuous, capability is verified by proof-of-work, and education prepares learners for life.
+            <p className="text-sm sm:text-base text-[#666666] leading-relaxed font-normal font-sans">
+              Students, educators, researchers, industry, policymakers and community leaders move together—from lived experience to evidence, prototypes and practical recommendations.
             </p>
 
-            {/* Simple Spatial Connected Nodes Graphic - Clickable to Stakeholders Section */}
+            {/* Interactive Stakeholder Badge Card */}
             <a
-              href="#stakeholders"
-              className="mt-8 p-6 rounded-2xl spatial-glass-card flex items-center justify-between group cursor-pointer hover:border-[#6F3FF5]/40 transition-all hover:scale-[1.01] block"
+              href="#journey"
+              className="mt-8 p-6 rounded-2xl bg-white border-2 border-black/10 flex items-center justify-between group cursor-pointer hover:border-[#8000FF] transition-all duration-300 hover:shadow-lg block"
             >
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border border-[#6F3FF5]/40 animate-ping" />
-                  <div className="w-4 h-4 rounded-full bg-[#6F3FF5]" />
+                <div className="w-10 h-10 rounded-full bg-[#8000FF] text-white flex items-center justify-center font-bold font-mono-tech text-xs">
+                  01
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1E1E1E] group-hover:text-[#6F3FF5] transition-colors">
-                    Collaborative Ecosystem
+                  <h4 className="text-sm font-bold text-[#0A0A0C] group-hover:text-[#8000FF] transition-colors uppercase font-mono-tech">
+                    Public Collaborative Process
                   </h4>
-                  <p className="text-xs text-[#737373]">6 Stakeholders • 1 Shared Mission</p>
+                  <p className="text-xs text-[#666666]">6 Key Ecosystem Stakeholders</p>
                 </div>
               </div>
-              <span className="text-xs text-[#6F3FF5] font-semibold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                Explore Stakeholders →
+              <span className="text-xs font-mono-tech text-[#8000FF] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                Explore Process →
               </span>
             </a>
           </motion.div>
