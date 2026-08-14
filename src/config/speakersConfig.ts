@@ -33,16 +33,5 @@ export const FEATURED_SPEAKERS_CONFIG: Speaker[] = [
     bio: 'Leading pedagogy innovation, flipped classroom models, and teacher-mentorship networks for future-ready education.',
     topic: 'Flipped Classrooms & AI-Native Learning Infrastructure',
     rowOrder: 1
-  },
-  {
-    id: 'deepa-nair',
-    name: 'Deepa Nair',
-    designation: 'Ecosystem Strategy & Talent Lead',
-    organization: 'Purple Movement / µLearn',
-    category: 'Industry Partner',
-    image: '/speakers/Deepa Nair.jpg',
-    bio: 'Connecting industry talent networks, skill validation, and capability-based placement frameworks.',
-    topic: 'Bridging the Talent Gap: Capability over Credentials',
-    rowOrder: 1
   }
 ];

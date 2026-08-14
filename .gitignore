@@ -26,3 +26,9 @@ dist-ssr
 # Scratch temporary files
 scratch/
 
+# Source raw asset folders
+Student Stakeholders Pics/
+Community Partners/
+Speakers/
+
+

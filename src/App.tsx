@@ -7,6 +7,7 @@ import { EventActionLayer } from './components/EventActionLayer';
 import { EventThemeDark } from './components/EventThemeDark';
 import { EventOverviewCards } from './components/EventOverviewCards';
 import { EventSpeakers } from './components/EventSpeakers';
+import { EventStudentStakeholders } from './components/EventStudentStakeholders';
 import { EventPartners } from './components/EventPartners';
 import { EventOutcomes } from './components/EventOutcomes';
 import { EventCTA } from './components/EventCTA';
@@ -53,17 +54,20 @@ export function App() {
           {/* 8. Speakers & Voices */}
           <EventSpeakers />
 
-          {/* 9. Community Partners */}
+          {/* 9. Student Stakeholders (New Section) */}
+          <EventStudentStakeholders />
+
+          {/* 10. Community Partners (Now with HR Evolve & FOSS United logos) */}
           <EventPartners />
 
-          {/* 10. Deliverables & Outcomes */}
+          {/* 11. Deliverables & Outcomes */}
           <EventOutcomes />
 
-          {/* 11. Call To Action */}
+          {/* 12. Call To Action */}
           <EventCTA />
         </main>
 
-        {/* 12. Full Purple Footer (Screenshot 1 New) */}
+        {/* 13. Full Purple Footer (Screenshot 1 New) */}
         <EventFooter />
       </div>
     </div>

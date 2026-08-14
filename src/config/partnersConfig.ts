@@ -8,7 +8,6 @@ export interface PartnerLogo {
 }
 
 export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
-  // Row 1: 2 Cards
   {
     id: 'part-ai-compassion',
     name: 'AI + Compassion',
@@ -25,13 +24,20 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     description: 'Uniting students, researchers, and innovators to build AI solutions, foster a connected culture of innovation, and turn concepts into real-world impact.',
     rowOrder: 1
   },
-  // Row 2: 3 Cards
   {
     id: 'part-hr-evolve',
     name: 'HR Evolve',
     category: 'HR & Talent',
-    logo: '/community-partners/hr-evolve.jpg',
+    logo: '/community-partners/hr-evolve.jpeg',
     description: 'Connecting HR leaders, industry mentors, and student talent to reshape workplace readiness.',
+    rowOrder: 2
+  },
+  {
+    id: 'part-foss-united',
+    name: 'FOSS United',
+    category: 'Learning Ecosystem',
+    logo: '/community-partners/foss-united.svg',
+    description: 'Non-profit foundation promoting and strengthening the Free and Open Source Software (FOSS) ecosystem in India.',
     rowOrder: 2
   },
   {
