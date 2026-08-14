@@ -94,6 +94,13 @@ export const EventStudentStakeholders: React.FC = () => {
       organization: 'MBCET / CSI Trivandrum Chapter',
       bio: 'Serving in leadership roles across IEEE, MuLearn, and CSI, organizing student union activities, and mentoring peer communities.',
       image: '/students/vedha-mahadevan.jpg'
+    },
+    {
+      name: 'Fathima Basheer',
+      designation: 'IEEE IAS SBC Chair & Founder\'s Associate Intern',
+      organization: 'LBS College of Engineering, Kasaragod',
+      bio: 'Serving as the Chair of IEEE IAS SBC at LBSCEK and working as a Founder\'s Associate Intern at Fabus Frames. She is also a co-founder of OpenMind Makerspace.',
+      image: '/students/fathima-basheer.jpg'
     }
   ];
 
