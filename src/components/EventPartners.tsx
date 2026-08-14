@@ -11,7 +11,7 @@ export const EventPartners: React.FC = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '0px 0px -80px 0px' }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           className="text-left max-w-3xl mb-12 space-y-2"
         >
@@ -56,7 +56,7 @@ export const EventPartners: React.FC = () => {
               key={partner.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px -60px 0px' }}
               transition={{ duration: 0.5, delay: idx * 0.04 }}
               className="group relative bg-[#111019] rounded-2xl border-2 border-white/5 p-4 sm:p-5 flex flex-col items-center justify-between h-52 hover:border-[#8000FF] transition-all duration-300 cursor-pointer overflow-hidden shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/15"
             >

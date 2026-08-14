@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const lineReveal = {
-  hidden: { opacity: 0, y: 70, skewY: 6, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 65, skewY: 5 },
   visible: {
-    opacity: 1, y: 0, skewY: 0, filter: 'blur(0px)',
+    opacity: 1, y: 0, skewY: 0,
     transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
   }
 };
@@ -13,11 +13,11 @@ export const EventAbout: React.FC = () => {
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
 
-      {/* Top Right Decorative Purple Arc — animated scale in */}
+      {/* Top Right Decorative Purple Arc */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 0.4, scale: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '0px 0px -80px 0px' }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
         className="absolute top-0 right-0 w-64 h-64 bg-[#8000FF] rounded-bl-full pointer-events-none transform translate-x-12 -translate-y-12"
       />
@@ -28,21 +28,20 @@ export const EventAbout: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '0px 0px -80px 0px' }}
           transition={{ duration: 0.5 }}
           className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-[#F4F3F7]/60 mb-6"
         >
           THE PROPOSITION / 01
         </motion.div>
 
-        {/* Split Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-          {/* Left Column: Massive Headline — line-by-line split reveal */}
+          {/* Left Column: Headline — line-by-line split reveal */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.11 } } }}
             className="lg:col-span-7"
           >
@@ -64,11 +63,11 @@ export const EventAbout: React.FC = () => {
             </h2>
           </motion.div>
 
-          {/* Right Column — slides in from right with blur */}
+          {/* Right Column — slides in from right */}
           <motion.div
-            initial={{ opacity: 0, x: 60, filter: 'blur(8px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: 55 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
             transition={{ duration: 1, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 space-y-6 pt-2"
           >
@@ -80,7 +79,6 @@ export const EventAbout: React.FC = () => {
               Students, educators, researchers, industry, policymakers and community leaders move together—from lived experience to evidence, prototypes and practical recommendations.
             </p>
 
-            {/* Interactive Stakeholder Badge Card */}
             <a
               href="#journey"
               className="mt-8 p-6 rounded-2xl bg-[#111019] border-2 border-white/5 flex items-center justify-between group cursor-pointer hover:border-[#8000FF] transition-all duration-300 hover:shadow-lg hover:shadow-[#8000FF]/5 block"

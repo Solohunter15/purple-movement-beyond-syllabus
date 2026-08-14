@@ -34,11 +34,11 @@ export const EventOverviewCards: React.FC = () => {
     <section id="overview" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10 [perspective:1000px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header — tag slides left, headline sweeps up with skew */}
+        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '0px 0px -80px 0px' }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           className="text-left max-w-3xl mb-16 space-y-2"
         >
@@ -54,7 +54,7 @@ export const EventOverviewCards: React.FC = () => {
           <div className="overflow-hidden">
             <motion.h2
               variants={{
-                hidden: { y: 70, opacity: 0, skewY: 5 },
+                hidden: { y: 65, opacity: 0, skewY: 4 },
                 visible: {
                   y: 0, opacity: 1, skewY: 0,
                   transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
@@ -67,16 +67,16 @@ export const EventOverviewCards: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* 4 Cards Grid — depth flip on Y axis */}
+        {/* 4 Cards — depth flip on Y axis, no blur */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0, y: 60, rotateY: 18, filter: 'blur(10px)' }}
-                whileInView={{ opacity: 1, y: 0, rotateY: 0, filter: 'blur(0px)' }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 55, rotateY: 16 }}
+                whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                viewport={{ once: true, margin: '0px 0px -60px 0px' }}
                 transition={{ duration: 0.9, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 style={{ transformStyle: 'preserve-3d' }}
                 className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/10 group"

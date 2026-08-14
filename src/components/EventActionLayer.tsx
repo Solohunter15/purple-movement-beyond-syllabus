@@ -16,11 +16,11 @@ export const EventActionLayer: React.FC = () => {
   return (
     <section id="action-layer" className="py-24 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
 
-      {/* Top Full-Width Marquee Ticker — fades in from top */}
+      {/* Marquee Ticker */}
       <motion.div
         initial={{ opacity: 0, y: -16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '0px 0px -80px 0px' }}
         transition={{ duration: 0.7 }}
         className="w-full bg-[#07060A] border-b border-white/10 py-3 overflow-hidden mb-16"
       >
@@ -36,11 +36,10 @@ export const EventActionLayer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Tag Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '0px 0px -80px 0px' }}
           transition={{ duration: 0.5 }}
           className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-[#F4F3F7]/60 mb-8"
         >
@@ -49,12 +48,12 @@ export const EventActionLayer: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-          {/* Left Column: Headline — lines cascade up with blur+skew */}
+          {/* Left Column: Headline */}
           <div className="lg:col-span-6 space-y-4">
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px -80px 0px' }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
             >
               <h2 className="font-display font-black text-6xl sm:text-8xl md:text-[6.5rem] leading-[0.88] uppercase tracking-tight text-[#F4F3F7]">
@@ -65,9 +64,9 @@ export const EventActionLayer: React.FC = () => {
                   <div key={i} className="overflow-hidden">
                     <motion.div
                       variants={{
-                        hidden: { y: 80, opacity: 0, skewY: 5, filter: 'blur(8px)' },
+                        hidden: { y: 75, opacity: 0, skewY: 4 },
                         visible: {
-                          y: 0, opacity: 1, skewY: 0, filter: 'blur(0px)',
+                          y: 0, opacity: 1, skewY: 0,
                           transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] as const }
                         }
                       }}
@@ -83,7 +82,7 @@ export const EventActionLayer: React.FC = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px -80px 0px' }}
               transition={{ duration: 0.6, delay: 0.38 }}
               className="text-base sm:text-lg text-[#F4F3F7] font-bold font-sans pt-2"
             >
@@ -91,11 +90,11 @@ export const EventActionLayer: React.FC = () => {
             </motion.p>
           </div>
 
-          {/* Right Column: Action Table — rows slide in from right with blur */}
+          {/* Right Column: Action Table — rows slide in from right */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
             className="lg:col-span-6 border-t-2 border-b-2 border-white/20 divide-y divide-white/20"
           >
@@ -103,9 +102,9 @@ export const EventActionLayer: React.FC = () => {
               <motion.div
                 key={row.id}
                 variants={{
-                  hidden: { opacity: 0, x: 70, filter: 'blur(8px)' },
+                  hidden: { opacity: 0, x: 60 },
                   visible: {
-                    opacity: 1, x: 0, filter: 'blur(0px)',
+                    opacity: 1, x: 0,
                     transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }
                   }
                 }}

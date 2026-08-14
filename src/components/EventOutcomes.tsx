@@ -39,11 +39,11 @@ export const EventOutcomes: React.FC = () => {
     <section id="outcomes" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header — staggered tag + sweep headline + fade subtext */}
+        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '0px 0px -80px 0px' }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           className="text-left max-w-3xl mb-16 space-y-2"
         >
@@ -59,7 +59,7 @@ export const EventOutcomes: React.FC = () => {
           <div className="overflow-hidden">
             <motion.h2
               variants={{
-                hidden: { y: 70, opacity: 0, skewY: 5 },
+                hidden: { y: 65, opacity: 0, skewY: 4 },
                 visible: {
                   y: 0, opacity: 1, skewY: 0,
                   transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
@@ -81,20 +81,20 @@ export const EventOutcomes: React.FC = () => {
           </motion.p>
         </motion.div>
 
-        {/* 6 Outcomes Cards — stagger from bottom-left with blur */}
+        {/* 6 Outcomes Cards — stagger from bottom-left, no blur */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {outcomes.map((item, idx) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 55, x: -18, filter: 'blur(10px)' }}
-              whileInView={{ opacity: 1, y: 0, x: 0, filter: 'blur(0px)' }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 50, x: -16 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true, margin: '0px 0px -60px 0px' }}
               transition={{ duration: 0.85, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/10 group"
             >
               <div>
                 <motion.span
-                  whileInView={{ x: [0, 4, 0] }}
+                  whileInView={{ x: [0, 5, 0] }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 + idx * 0.08 }}
                   className="text-sm font-mono-tech font-bold text-[#00F5A0] block mb-4 group-hover:scale-105 origin-left transition-transform"

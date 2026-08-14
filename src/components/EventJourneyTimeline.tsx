@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 interface JourneyPhase {
@@ -11,128 +11,84 @@ interface JourneyPhase {
   isMint?: boolean;
 }
 
-// Defined outside component so it's stable
-const PHASES: JourneyPhase[] = [
-  {
-    number: '01',
-    date: 'JULY',
-    action: 'INITIATE',
-    audience: 'Ecosystem Stakeholders',
-    question: '"Starting the conversation between students & educators."'
-  },
-  {
-    number: '02',
-    date: 'AUG 15',
-    action: 'LISTEN',
-    audience: 'Students + Student Communities',
-    question: '"What needs to change?"'
-  },
-  {
-    number: '03',
-    date: 'SEP 05',
-    action: 'QUESTION',
-    audience: 'Academics + Policymakers',
-    question: '"What should education become?"'
-  },
-  {
-    number: '04',
-    date: 'OCT 02',
-    action: 'CONNECT',
-    audience: 'Industry + Global Community',
-    question: '"What capabilities will the future demand?"',
-    badge: '24-HOUR GLOBAL RELAY'
-  },
-  {
-    number: '05',
-    date: 'NOV 14',
-    action: 'BUILD',
-    audience: 'All Stakeholders',
-    question: '"What can we actually build?"'
-  },
-  {
-    number: '06',
-    date: 'DECEMBER',
-    action: 'ACT',
-    audience: 'Recommendations + Working Prototypes',
-    question: '"Submission to the relevant Union Ministry."',
-    isMint: true
-  }
-];
-
 const wordReveal = {
-  hidden: { opacity: 0, y: 60, skewY: 5, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 55, skewY: 4 },
   visible: {
-    opacity: 1, y: 0, skewY: 0, filter: 'blur(0px)',
+    opacity: 1, y: 0, skewY: 0,
     transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
   }
 };
 
 export const EventJourneyTimeline: React.FC = () => {
-  // Ref for the scrollable wrapper (the `relative` parent of the line)
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  // One ref per circle node — indexed same as PHASES
-  const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  // lineLeft / lineWidth are in px, relative to wrapperRef's left edge
-  const [lineLeft, setLineLeft]   = useState(0);
-  const [lineTop, setLineTop]     = useState(0);
-  const [lineWidth, setLineWidth] = useState(0);
-  const [ready, setReady]         = useState(false);
-
-  const measureLine = useCallback(() => {
-    const wrapper = wrapperRef.current;
-    const first   = circleRefs.current[0];
-    const last    = circleRefs.current[PHASES.length - 1];
-    if (!wrapper || !first || !last) return;
-
-    const wRect = wrapper.getBoundingClientRect();
-    const fRect = first.getBoundingClientRect();
-    const lRect = last.getBoundingClientRect();
-
-    // scrollLeft accounts for horizontal scroll inside the overflow-x-auto wrapper
-    const scrollLeft = wrapper.scrollLeft;
-
-    const left  = fRect.left  - wRect.left + scrollLeft + fRect.width  / 2;
-    const right = lRect.left  - wRect.left + scrollLeft + lRect.width  / 2;
-    const top   = fRect.top   - wRect.top  + fRect.height / 2;
-
-    setLineLeft(left);
-    setLineTop(top);
-    setLineWidth(right - left);
-    setReady(true);
-  }, []);
-
-  useEffect(() => {
-    // Measure after initial paint and on every resize
-    const timer = setTimeout(measureLine, 80);
-    window.addEventListener('resize', measureLine);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('resize', measureLine);
-    };
-  }, [measureLine]);
+  const phases: JourneyPhase[] = [
+    {
+      number: '01',
+      date: 'JULY',
+      action: 'INITIATE',
+      audience: 'Ecosystem Stakeholders',
+      question: '"Starting the conversation between students & educators."'
+    },
+    {
+      number: '02',
+      date: 'AUG 15',
+      action: 'LISTEN',
+      audience: 'Students + Student Communities',
+      question: '"What needs to change?"'
+    },
+    {
+      number: '03',
+      date: 'SEP 05',
+      action: 'QUESTION',
+      audience: 'Academics + Policymakers',
+      question: '"What should education become?"'
+    },
+    {
+      number: '04',
+      date: 'OCT 02',
+      action: 'CONNECT',
+      audience: 'Industry + Global Community',
+      question: '"What capabilities will the future demand?"',
+      badge: '24-HOUR GLOBAL RELAY'
+    },
+    {
+      number: '05',
+      date: 'NOV 14',
+      action: 'BUILD',
+      audience: 'All Stakeholders',
+      question: '"What can we actually build?"'
+    },
+    {
+      number: '06',
+      date: 'DECEMBER',
+      action: 'ACT',
+      audience: 'Recommendations + Working Prototypes',
+      question: '"Submission to the relevant Union Ministry."',
+      isMint: true
+    }
+  ];
 
   return (
     <section id="journey" className="py-28 relative overflow-hidden bg-[#07060A] text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Header */}
+        {/* Top Tag & Main Headline */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-20">
+
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
             transition={{ duration: 0.5 }}
             className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-white/70"
           >
             THE JOURNEY / 02
           </motion.div>
 
-          {/* Word-by-word headline reveal */}
+          {/* Massive Display Title — word-by-word reveal */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
             className="text-right"
           >
@@ -151,58 +107,47 @@ export const EventJourneyTimeline: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Timeline — wrapperRef is the positioning context for the line */}
-        <div ref={wrapperRef} className="relative pt-12 pb-16 overflow-x-auto no-scrollbar">
-
+        {/* Horizontal Timeline Bar */}
+        <div className="relative pt-12 pb-16 overflow-x-auto no-scrollbar">
           {/*
-            The line is measured from the actual DOM position of circle 01 → circle 06.
-            This is the only approach that is guaranteed correct at every viewport width.
-            It renders only after measurement (ready=true) to avoid a flash at 0px.
+            Line lives INSIDE this relative container so its percentage
+            widths resolve against the content, not the scroll viewport.
+            With 6 flex-1 cols, px-4 (1rem) each side, gap-8 (2rem):
+              center of col k = (2k+1)/12 * 100%
+            → left = right = 8.333%  (first/last node centers)
           */}
-          {ready && (
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                position: 'absolute',
-                top:    lineTop,
-                left:   lineLeft,
-                width:  lineWidth,
-                height: 2,
-                transformOrigin: 'left center',
-                zIndex: 0,
-              }}
-              className="bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] pointer-events-none"
-            />
-          )}
-
-          {/* Node columns */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
-            className="flex items-start justify-between min-w-[64rem] relative z-10 px-4 gap-8"
+            viewport={{ once: true, margin: '0px 0px -60px 0px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.16 } } }}
+            className="relative flex items-start justify-between min-w-[64rem] z-10 px-4 gap-8"
           >
-            {PHASES.map((phase, idx) => {
+            {/* Connecting Line — stops exactly at node 06 center */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, margin: '0px 0px -60px 0px' }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-5 left-[8.333%] right-[8.333%] h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0 origin-left pointer-events-none"
+            />
+
+            {phases.map((phase) => {
               const isMint = phase.isMint;
               return (
                 <motion.div
                   key={phase.number}
                   variants={{
-                    hidden: { opacity: 0, y: 40, scale: 0.9, filter: 'blur(10px)' },
+                    hidden: { opacity: 0, y: 40, scale: 0.9 },
                     visible: {
-                      opacity: 1, y: 0, scale: 1, filter: 'blur(0px)',
+                      opacity: 1, y: 0, scale: 1,
                       transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }
                     }
                   }}
                   className="flex-1 flex flex-col items-start group"
                 >
-                  {/* Circle — ref captured for line measurement */}
+                  {/* Numbered Circle Node */}
                   <motion.div
-                    ref={(el) => { circleRefs.current[idx] = el; }}
                     whileHover={{ scale: 1.2, rotate: 6 }}
                     transition={{ type: 'spring', stiffness: 320, damping: 14 }}
                     className={`w-10 h-10 rounded-full flex items-center justify-center font-mono-tech text-xs font-bold mb-6 shadow-lg z-10 relative cursor-default ${
@@ -240,7 +185,6 @@ export const EventJourneyTimeline: React.FC = () => {
             })}
           </motion.div>
         </div>
-
       </div>
     </section>
   );
