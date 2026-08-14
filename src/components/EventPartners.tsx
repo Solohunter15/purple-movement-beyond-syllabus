@@ -7,18 +7,47 @@ export const EventPartners: React.FC = () => {
     <section id="partners" className="py-20 relative overflow-hidden bg-[#07060A] text-[#F4F3F7] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-left max-w-3xl mb-12 space-y-2">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
+        {/* Section Header — animated reveal */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          className="text-left max-w-3xl mb-12 space-y-2"
+        >
+          <motion.span
+            variants={{
+              hidden: { opacity: 0, x: -24 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+            }}
+            className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold"
+          >
             COMMUNITY PARTNERS
-          </span>
-          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight">
-            ORGANISATIONS POWERING THE MOVEMENT
-          </h2>
-          <p className="text-xs sm:text-sm text-[#9F9CAE] font-sans">
+          </motion.span>
+          <div className="overflow-hidden">
+            <motion.h2
+              variants={{
+                hidden: { y: 70, opacity: 0, skewY: 5 },
+                visible: {
+                  y: 0, opacity: 1, skewY: 0,
+                  transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
+                }
+              }}
+              className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight"
+            >
+              ORGANISATIONS POWERING THE MOVEMENT
+            </motion.h2>
+          </div>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
+            className="text-xs sm:text-sm text-[#9F9CAE] font-sans"
+          >
             Hover over any partner card to explore their mission.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Compact Partner Logo Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">

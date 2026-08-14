@@ -207,3 +207,20 @@
     cursor: none !important;
   }
 }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Section entry ambient glow pulse */
+@keyframes sectionGlow {
+  0%   { opacity: 0; transform: scale(0.6); }
+  50%  { opacity: 0.18; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+.animate-glow-pulse {
+  animation: sectionGlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+

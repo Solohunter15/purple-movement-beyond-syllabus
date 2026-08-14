@@ -33,36 +33,64 @@ export const EventOverviewCards: React.FC = () => {
   return (
     <section id="overview" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10 [perspective:1000px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-left max-w-3xl mb-16 space-y-2">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
-            MOVEMENT ARCHITECTURE
-          </span>
-          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight">
-            CORE PILLARS
-          </h2>
-        </div>
 
-        {/* 4 Cards Grid */}
+        {/* Section Header — tag slides left, headline sweeps up with skew */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          className="text-left max-w-3xl mb-16 space-y-2"
+        >
+          <motion.span
+            variants={{
+              hidden: { opacity: 0, x: -24 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+            }}
+            className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold"
+          >
+            MOVEMENT ARCHITECTURE
+          </motion.span>
+          <div className="overflow-hidden">
+            <motion.h2
+              variants={{
+                hidden: { y: 70, opacity: 0, skewY: 5 },
+                visible: {
+                  y: 0, opacity: 1, skewY: 0,
+                  transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
+                }
+              }}
+              className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight"
+            >
+              CORE PILLARS
+            </motion.h2>
+          </div>
+        </motion.div>
+
+        {/* 4 Cards Grid — depth flip on Y axis */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0, y: 50, rotateX: 18 }}
-                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                initial={{ opacity: 0, y: 60, rotateY: 18, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, y: 0, rotateY: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.9, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 style={{ transformStyle: 'preserve-3d' }}
-                className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/5 group"
+                className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/10 group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#8000FF]/25 flex items-center justify-center mb-6 text-[#00F5A0] border border-[#8000FF]/30">
+                  <motion.div
+                    whileInView={{ scale: [0, 1.15, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
+                    className="w-12 h-12 rounded-xl bg-[#8000FF]/25 flex items-center justify-center mb-6 text-[#00F5A0] border border-[#8000FF]/30 group-hover:bg-[#8000FF]/40 transition-colors"
+                  >
                     <Icon className="w-6 h-6" />
-                  </div>
-                  
+                  </motion.div>
+
                   <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#8000FF] block mb-1 font-bold">
                     {card.tag}
                   </span>
@@ -79,7 +107,6 @@ export const EventOverviewCards: React.FC = () => {
             );
           })}
         </div>
-
       </div>
     </section>
   );
