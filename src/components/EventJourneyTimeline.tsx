@@ -123,16 +123,7 @@ export const EventJourneyTimeline: React.FC = () => {
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.16 } } }}
             className="relative flex items-start justify-between min-w-[64rem] z-10 px-4 gap-8"
           >
-            {/* Connecting Line — stops exactly at node 06 center */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '0px 0px -60px 0px' }}
-              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-5 left-[calc(8.333%-1rem)] right-[calc(8.333%-1rem)] h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0 origin-left pointer-events-none"
-            />
-
-            {phases.map((phase) => {
+            {phases.map((phase, idx) => {
               const isMint = phase.isMint;
               return (
                 <motion.div
@@ -144,8 +135,23 @@ export const EventJourneyTimeline: React.FC = () => {
                       transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }
                     }
                   }}
-                  className="flex-1 flex flex-col items-start group"
+                  className="relative flex-1 flex flex-col items-start group"
                 >
+                  {/* Connector Line to next node (omitted for the final node) */}
+                  {idx < phases.length - 1 && (
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true, margin: '0px 0px -60px 0px' }}
+                      transition={{ duration: 0.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                      className={`absolute top-5 left-5 w-[calc(100%+2rem)] h-[2px] z-0 origin-left pointer-events-none ${
+                        idx === phases.length - 2
+                          ? 'bg-gradient-to-r from-[#8000FF] to-[#00F5A0]'
+                          : 'bg-[#8000FF]'
+                      }`}
+                    />
+                  )}
+
                   {/* Numbered Circle Node */}
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 6 }}

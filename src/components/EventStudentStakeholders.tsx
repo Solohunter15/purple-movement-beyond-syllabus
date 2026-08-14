@@ -33,13 +33,6 @@ export const EventStudentStakeholders: React.FC = () => {
       image: '/students/diya-bhatt.jpg'
     },
     {
-      name: 'Parvathy V. Nair',
-      designation: 'IEEE ComSoc Ambassador & HPAIR Delegate',
-      organization: 'IEEE / HPAIR Vietnam 2026',
-      bio: 'Passionate about cybersecurity, technology, leadership, and building global communities through IEEE and international summits.',
-      image: '/students/parvathy-v-nair.jpg'
-    },
-    {
       name: 'Salahudheen Thajudheen',
       designation: 'Final Year CSE Graduate',
       organization: 'College of Engineering Kottarakkara',
