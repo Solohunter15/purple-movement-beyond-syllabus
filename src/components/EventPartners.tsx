@@ -21,49 +21,30 @@ export const EventPartners: React.FC = () => {
         </div>
 
         {/* Compact Partner Logo Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
           {COMMUNITY_PARTNERS_CONFIG.map((partner, idx) => (
             <motion.div
               key={partner.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ 
-                opacity: 1, 
-                y: [0, -6, 0],
-                transition: { 
-                  y: {
-                    repeat: Infinity,
-                    duration: 4,
-                    delay: idx * 0.2,
-                    ease: "easeInOut"
-                  },
-                  opacity: { duration: 0.6, delay: idx * 0.05 }
-                }
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="group relative bg-[#111019] rounded-2xl border-2 border-white/5 p-4 flex flex-col items-center justify-center min-h-[170px] hover:border-[#8000FF] transition-all duration-300 cursor-pointer overflow-hidden shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/5"
+              transition={{ duration: 0.5, delay: idx * 0.04 }}
+              className="group relative bg-[#111019] rounded-2xl border-2 border-white/5 p-4 sm:p-5 flex flex-col items-center justify-between h-44 hover:border-[#8000FF] transition-all duration-300 cursor-pointer overflow-hidden shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/10"
             >
-              {/* Centered Logo Frame */}
-              <div className="w-24 h-24 rounded-xl bg-white/95 p-2 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:scale-80 group-hover:-translate-y-2 shrink-0 overflow-hidden">
+              {/* Centered Wide Logo Frame */}
+              <div className="w-full h-24 rounded-xl bg-white flex items-center justify-center p-3 shadow-inner group-hover:scale-[1.03] transition-transform duration-300">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain p-0.5 transition-transform duration-300"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
 
-              {/* Revealed on Hover */}
-              <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-36 transition-all duration-300 ease-in-out text-center flex flex-col items-center overflow-hidden w-full mt-1">
-                <span className="text-[8px] font-mono-tech uppercase tracking-wider px-2 py-0.5 rounded-xs bg-[#8000FF]/15 text-[#00F5A0] font-bold mb-1">
-                  {partner.category}
-                </span>
-
-                <h3 className="font-display font-black text-lg text-[#F4F3F7] uppercase mb-1 leading-tight group-hover:text-[#00F5A0] transition-colors">
+              {/* Partner Name Label */}
+              <div className="w-full text-center mt-2 px-1">
+                <span className="text-[11px] font-mono-tech uppercase font-bold text-[#F4F3F7]/80 truncate block group-hover:text-[#00F5A0] transition-colors tracking-wide">
                   {partner.name}
-                </h3>
-
-                <p className="text-[11px] text-[#9F9CAE] leading-snug line-clamp-3 font-sans">
-                  {partner.description}
-                </p>
+                </span>
               </div>
             </motion.div>
           ))}
