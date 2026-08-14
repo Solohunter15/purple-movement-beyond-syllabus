@@ -129,7 +129,7 @@ export const EventJourneyTimeline: React.FC = () => {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: '0px 0px -60px 0px' }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-5 left-[8.333%] right-[8.333%] h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0 origin-left pointer-events-none"
+              className="absolute top-5 left-[calc(8.333%-1rem)] right-[calc(8.333%-1rem)] h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0 origin-left pointer-events-none"
             />
 
             {phases.map((phase) => {
