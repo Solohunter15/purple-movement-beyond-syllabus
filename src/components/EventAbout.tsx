@@ -8,22 +8,6 @@ export const EventAbout: React.FC = () => {
       {/* Top Right Decorative Purple Accent Arc (Screenshot 5) */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#8000FF] rounded-bl-full pointer-events-none opacity-40 transform translate-x-12 -translate-y-12" />
 
-      {/* Top Date Stepper Ticker */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="flex items-center gap-4 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/50 tracking-wider">
-          <span className="text-[#8000FF]">JULY</span>
-          <span>→</span>
-          <span className="text-[#8000FF]">AUG 15</span>
-          <span>→</span>
-          <span>SEP 05</span>
-          <span>→</span>
-          <span>OCT 02</span>
-          <span>→</span>
-          <span>NOV 14</span>
-          <span>→</span>
-          <span className="text-[#8000FF]">DEC</span>
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

@@ -26,7 +26,7 @@ export const EventHero: React.FC = () => {
   const bannerY = useTransform(scrollY, [0, 500], [0, -40]);
 
   return (
-    <section id="hero" className="relative min-h-screen w-full bg-[#07060A] text-[#F4F3F7] pt-32 pb-16 flex flex-col justify-between overflow-hidden">
+    <section id="hero" className="relative min-h-screen w-full bg-[#07060A] text-[#F4F3F7] pt-36 sm:pt-40 pb-12 flex flex-col justify-between overflow-hidden">
       
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
@@ -50,7 +50,7 @@ export const EventHero: React.FC = () => {
 
             {/* Massive Display Title */}
             <div
-              className="font-display font-black uppercase text-7xl sm:text-9xl md:text-[11rem] leading-[0.82] tracking-tighter select-none"
+              className="font-display font-black uppercase text-6xl sm:text-8xl md:text-[8rem] lg:text-[9.2rem] leading-[0.85] tracking-tighter select-none"
             >
               <div className="text-[#F4F3F7]">BEYOND</div>
               <div className="text-[#8000FF]">SYLLABUS</div>
