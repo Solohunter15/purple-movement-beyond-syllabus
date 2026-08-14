@@ -15,20 +15,27 @@ export const EventJourneyTimeline: React.FC = () => {
   const phases: JourneyPhase[] = [
     {
       number: '01',
+      date: 'JULY',
+      action: 'CONVENE',
+      audience: 'Stakeholder Representatives',
+      question: '"The Conversation Begins."'
+    },
+    {
+      number: '02',
       date: 'AUG 15',
       action: 'LISTEN',
       audience: 'Students + Student Communities',
       question: '"What needs to change?"'
     },
     {
-      number: '02',
+      number: '03',
       date: 'SEP 05',
       action: 'QUESTION',
       audience: 'Academics + Policymakers',
       question: '"What should education become?"'
     },
     {
-      number: '03',
+      number: '04',
       date: 'OCT 02',
       action: 'CONNECT',
       audience: 'Industry + Global Community',
@@ -36,14 +43,14 @@ export const EventJourneyTimeline: React.FC = () => {
       badge: '24-HOUR GLOBAL RELAY'
     },
     {
-      number: '04',
+      number: '05',
       date: 'NOV 14',
       action: 'BUILD',
       audience: 'All Stakeholders',
       question: '"What can we actually build?"'
     },
     {
-      number: '05',
+      number: '06',
       date: 'DECEMBER',
       action: 'ACT',
       audience: 'Recommendations + Working Prototypes',

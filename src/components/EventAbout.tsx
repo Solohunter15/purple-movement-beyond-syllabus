@@ -10,7 +10,9 @@ export const EventAbout: React.FC = () => {
 
       {/* Top Date Stepper Ticker */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="flex items-center gap-4 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/50 tracking-wider">
+        <div className="flex items-center gap-4 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/50 tracking-wider overflow-x-auto no-scrollbar">
+          <span>JULY</span>
+          <span>→</span>
           <span className="text-[#8000FF]">AUG 15</span>
           <span>→</span>
           <span>SEP 05</span>

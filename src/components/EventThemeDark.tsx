@@ -71,6 +71,8 @@ export const EventThemeDark: React.FC = () => {
       {/* Date Ticker at Bottom (Screenshot 3) */}
       <div className="w-full border-t border-white/10 pt-6 pb-2 mt-20 bg-[#07060A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-6 text-xs font-mono-tech uppercase font-bold text-white/50 overflow-x-auto no-scrollbar">
+          <span>JULY</span>
+          <span>→</span>
           <span className="text-[#8000FF]">AUG 15</span>
           <span>→</span>
           <span>SEP 05</span>
