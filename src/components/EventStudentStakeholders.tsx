@@ -98,7 +98,7 @@ export const EventStudentStakeholders: React.FC = () => {
   ];
 
   return (
-    <section id="students" className="py-28 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
+    <section id="students" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -106,10 +106,10 @@ export const EventStudentStakeholders: React.FC = () => {
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
             CO-CREATORS & REPRESENTATIVES
           </span>
-          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#0A0A0C] tracking-tight">
+          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight">
             STUDENT STAKEHOLDERS
           </h2>
-          <p className="text-sm text-[#666666] font-sans">
+          <p className="text-sm text-[#9F9CAE] font-sans">
             Students serving as the foundational stakeholders chosen by our community to lead academic and capability transformation.
           </p>
         </div>
@@ -119,15 +119,15 @@ export const EventStudentStakeholders: React.FC = () => {
           {students.map((student, idx) => (
             <motion.div
               key={student.name}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="bg-white rounded-2xl border-2 border-black/10 p-5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-xs hover:shadow-md group"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: (idx % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-[#111019] rounded-2xl border-2 border-white/5 p-5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/5 group"
             >
               <div>
                 {/* Photo Frame */}
-                <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-5 border border-black/10 bg-slate-50 shadow-inner">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-5 border border-white/5 bg-[#171622] shadow-inner">
                   <img
                     src={student.image}
                     alt={student.name}
@@ -141,11 +141,11 @@ export const EventStudentStakeholders: React.FC = () => {
                       }
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-50" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07060A]/40 via-transparent to-transparent opacity-50" />
                 </div>
 
                 {/* Info */}
-                <h3 className="font-display font-black text-2xl text-[#0A0A0C] uppercase group-hover:text-[#8000FF] transition-colors mb-1">
+                <h3 className="font-display font-black text-2xl text-[#F4F3F7] uppercase group-hover:text-[#00F5A0] transition-colors mb-1">
                   {student.name}
                 </h3>
 
@@ -153,18 +153,18 @@ export const EventStudentStakeholders: React.FC = () => {
                   {student.designation}
                 </p>
 
-                <p className="text-[10px] text-[#0A0A0C] font-black uppercase mb-3 font-sans">
+                <p className="text-[10px] text-[#F4F3F7] font-black uppercase mb-3 font-sans">
                   {student.organization}
                 </p>
 
-                <p className="text-xs text-[#666666] leading-relaxed font-sans font-normal border-l-2 border-[#8000FF]/40 pl-3">
+                <p className="text-xs text-[#9F9CAE] leading-relaxed font-sans font-normal border-l-2 border-[#8000FF]/40 pl-3">
                   {student.bio}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between text-[9px] font-mono-tech text-[#666666] font-bold uppercase">
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[9px] font-mono-tech text-[#9F9CAE] font-bold uppercase group-hover:text-[#F4F3F7] transition-colors">
                 <span>STAKEHOLDER</span>
-                <span className="text-[#8000FF]">STUDENT</span>
+                <span className="text-[#00F5A0]">STUDENT</span>
               </div>
             </motion.div>
           ))}

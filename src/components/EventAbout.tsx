@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 export const EventAbout: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
+    <section id="about" className="py-24 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
       
       {/* Top Right Decorative Purple Accent Arc (Screenshot 5) */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#8000FF] rounded-bl-full pointer-events-none opacity-90 transform translate-x-12 -translate-y-12" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#8000FF] rounded-bl-full pointer-events-none opacity-40 transform translate-x-12 -translate-y-12" />
 
       {/* Top Date Stepper Ticker */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="flex items-center gap-4 text-xs font-mono-tech uppercase font-bold text-[#0A0A0C]/60 tracking-wider">
+        <div className="flex items-center gap-4 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/50 tracking-wider">
           <span className="text-[#8000FF]">AUG 15</span>
           <span>→</span>
           <span>SEP 05</span>
@@ -29,9 +29,9 @@ export const EventAbout: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-[#0A0A0C]/70 mb-6"
+          className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-[#F4F3F7]/60 mb-6"
         >
           THE PROPOSITION / 01
         </motion.div>
@@ -41,13 +41,13 @@ export const EventAbout: React.FC = () => {
           
           {/* Left Column: Massive Headline (Screenshot 5) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <h2 className="font-display font-black text-6xl sm:text-8xl md:text-[6.5rem] leading-[0.88] uppercase tracking-tight text-[#0A0A0C]">
+            <h2 className="font-display font-black text-6xl sm:text-8xl md:text-[6.5rem] leading-[0.88] uppercase tracking-tight text-[#F4F3F7]">
               <div>NOT ANOTHER</div>
               <div>DISCUSSION ABOUT</div>
               <div className="text-[#8000FF]">WHAT IS BROKEN.</div>
@@ -56,37 +56,37 @@ export const EventAbout: React.FC = () => {
 
           {/* Right Column: Proposition Paragraph (Screenshot 5) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 space-y-6 pt-2"
           >
-            <p className="text-base sm:text-xl font-bold text-[#0A0A0C] leading-snug font-sans">
+            <p className="text-base sm:text-xl font-bold text-[#F4F3F7] leading-snug font-sans">
               Beyond Syllabus is a public process for turning collective intelligence into credible alternatives for education.
             </p>
 
-            <p className="text-sm sm:text-base text-[#666666] leading-relaxed font-normal font-sans">
+            <p className="text-sm sm:text-base text-[#9F9CAE] leading-relaxed font-normal font-sans">
               Students, educators, researchers, industry, policymakers and community leaders move together—from lived experience to evidence, prototypes and practical recommendations.
             </p>
 
             {/* Interactive Stakeholder Badge Card */}
             <a
               href="#journey"
-              className="mt-8 p-6 rounded-2xl bg-white border-2 border-black/10 flex items-center justify-between group cursor-pointer hover:border-[#8000FF] transition-all duration-300 hover:shadow-lg block"
+              className="mt-8 p-6 rounded-2xl bg-[#111019] border-2 border-white/5 flex items-center justify-between group cursor-pointer hover:border-[#8000FF] transition-all duration-300 hover:shadow-lg hover:shadow-[#8000FF]/5 block"
             >
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#8000FF] text-white flex items-center justify-center font-bold font-mono-tech text-xs">
+                <div className="w-10 h-10 rounded-full bg-[#8000FF] text-white flex items-center justify-center font-bold font-mono-tech text-xs ring-4 ring-[#8000FF]/15">
                   01
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0A0A0C] group-hover:text-[#8000FF] transition-colors uppercase font-mono-tech">
+                  <h4 className="text-sm font-bold text-[#F4F3F7] group-hover:text-[#00F5A0] transition-colors uppercase font-mono-tech">
                     Public Collaborative Process
                   </h4>
-                  <p className="text-xs text-[#666666]">6 Key Ecosystem Stakeholders</p>
+                  <p className="text-xs text-[#9F9CAE]">6 Key Ecosystem Stakeholders</p>
                 </div>
               </div>
-              <span className="text-xs font-mono-tech text-[#8000FF] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+              <span className="text-xs font-mono-tech text-[#00F5A0] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
                 Explore Process →
               </span>
             </a>

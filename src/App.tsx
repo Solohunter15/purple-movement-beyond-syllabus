@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 import { EventNavbar } from './components/EventNavbar';
 import { EventHero } from './components/EventHero';
 import { EventAbout } from './components/EventAbout';
@@ -16,10 +18,52 @@ import { CustomCursor } from './components/CustomCursor';
 import { EventLoadingScreen } from './components/EventLoadingScreen';
 
 export function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Scroll to top instantly on initial page load / refresh
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
+    // Lock scrolling initially
+    document.body.style.overflow = 'hidden';
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
+  useEffect(() => {
+    // Initialize Lenis smooth scroll once loading is complete
+    if (!loading) {
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+
+      const raf = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
+
+      requestAnimationFrame(raf);
+
+      return () => {
+        lenis.destroy();
+      };
+    }
+  }, [loading]);
+
+  const handleLoadingComplete = () => {
+    setLoading(false);
+    document.body.style.overflow = 'unset';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="relative min-h-screen bg-[#FAF9FA] text-[#0A0A0C] selection:bg-[#8000FF] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#07060A] text-[#F4F3F7] selection:bg-[#8000FF] selection:text-white font-sans antialiased overflow-x-hidden">
       {/* 0. Cinematic Loading Experience */}
-      <EventLoadingScreen />
+      <EventLoadingScreen onComplete={handleLoadingComplete} />
 
       {/* Interactive Custom Cursor */}
       <CustomCursor />

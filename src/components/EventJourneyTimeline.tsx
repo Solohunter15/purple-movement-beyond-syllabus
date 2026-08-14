@@ -53,7 +53,7 @@ export const EventJourneyTimeline: React.FC = () => {
   ];
 
   return (
-    <section id="journey" className="py-28 relative overflow-hidden bg-[#000000] text-white border-t border-white/10">
+    <section id="journey" className="py-28 relative overflow-hidden bg-[#07060A] text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Tag & Main Headline (Screenshot 2) */}
@@ -63,7 +63,7 @@ export const EventJourneyTimeline: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.5 }}
             className="text-xs font-mono-tech uppercase font-bold tracking-[0.25em] text-white/70"
           >
@@ -74,7 +74,7 @@ export const EventJourneyTimeline: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.7 }}
             className="text-right"
           >
@@ -90,13 +90,39 @@ export const EventJourneyTimeline: React.FC = () => {
         <div className="relative pt-12 pb-16 overflow-x-auto no-scrollbar">
           
           {/* Connecting Line (Purple for 01-04, Mint Green for 05) */}
-          <div className="absolute top-[3rem] left-8 right-8 h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0" />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "calc(100% - 4rem)" }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-[3rem] left-8 h-[2px] bg-gradient-to-r from-[#8000FF] via-[#8000FF] to-[#00F5A0] z-0 origin-left"
+          />
 
-          <div className="flex items-start justify-between min-w-[64rem] relative z-10 px-4 gap-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-100px" }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.16
+                }
+              }
+            }}
+            className="flex items-start justify-between min-w-[64rem] relative z-10 px-4 gap-8"
+          >
             {phases.map((phase) => {
               const isMint = phase.isMint;
               return (
-                <div key={phase.number} className="flex-1 flex flex-col items-start group">
+                <motion.div
+                  key={phase.number}
+                  variants={{
+                    hidden: { opacity: 0, y: 30, scale: 0.95 },
+                    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                  }}
+                  className="flex-1 flex flex-col items-start group"
+                >
                   
                   {/* Numbered Circle Node */}
                   <div
@@ -140,10 +166,10 @@ export const EventJourneyTimeline: React.FC = () => {
                     {phase.question}
                   </p>
 
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
         </div>
 

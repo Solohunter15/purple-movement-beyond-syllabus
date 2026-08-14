@@ -31,7 +31,7 @@ export const EventOverviewCards: React.FC = () => {
   ];
 
   return (
-    <section id="overview" className="py-28 relative overflow-hidden bg-[#FAF9FA] text-[#0A0A0C] border-t border-black/10">
+    <section id="overview" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10 [perspective:1000px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -39,7 +39,7 @@ export const EventOverviewCards: React.FC = () => {
           <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
             MOVEMENT ARCHITECTURE
           </span>
-          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#0A0A0C] tracking-tight">
+          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight">
             CORE PILLARS
           </h2>
         </div>
@@ -51,14 +51,15 @@ export const EventOverviewCards: React.FC = () => {
             return (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="bg-white rounded-2xl p-7 border-2 border-black/10 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-md"
+                initial={{ opacity: 0, y: 50, rotateX: 18 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                style={{ transformStyle: 'preserve-3d' }}
+                className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/5 group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#8000FF]/10 flex items-center justify-center mb-6 text-[#8000FF]">
+                  <div className="w-12 h-12 rounded-xl bg-[#8000FF]/25 flex items-center justify-center mb-6 text-[#00F5A0] border border-[#8000FF]/30">
                     <Icon className="w-6 h-6" />
                   </div>
                   
@@ -66,18 +67,18 @@ export const EventOverviewCards: React.FC = () => {
                     {card.tag}
                   </span>
 
-                  <h3 className="font-display font-black text-2xl uppercase text-[#0A0A0C] mb-3">
+                  <h3 className="font-display font-black text-2xl uppercase text-[#F4F3F7] mb-3 group-hover:text-[#00F5A0] transition-colors">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-[#666666] font-normal leading-relaxed font-sans">
+                  <p className="text-xs text-[#9F9CAE] font-normal leading-relaxed font-sans">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-black/10 flex items-center justify-between text-[10px] font-mono-tech text-[#0A0A0C] font-bold">
+                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono-tech text-[#F4F3F7]/70 font-bold group-hover:text-[#F4F3F7] transition-colors">
                   <span>FRAMEWORK</span>
-                  <span className="text-[#8000FF]">↗</span>
+                  <span className="text-[#00F5A0]">↗</span>
                 </div>
               </motion.div>
             );

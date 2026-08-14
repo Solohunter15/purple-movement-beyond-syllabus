@@ -1,9 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
 export const EventThemeDark: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // 3D Perspective transforms
+  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [22, 0, -22]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.88, 1, 0.88]);
+
   const handleJoinClick = () => {
     confetti({
       particleCount: 90,
@@ -16,7 +26,7 @@ export const EventThemeDark: React.FC = () => {
   };
 
   return (
-    <section id="theme-question" className="py-32 relative overflow-hidden bg-[#000000] text-white border-t border-white/10 flex flex-col justify-between">
+    <section ref={sectionRef} id="theme-question" className="py-32 relative overflow-hidden bg-[#07060A] text-white border-t border-white/10 flex flex-col justify-between [perspective:1200px]">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center my-auto">
         
@@ -24,7 +34,7 @@ export const EventThemeDark: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.5 }}
           className="text-xs sm:text-sm font-mono-tech uppercase font-bold tracking-[0.2em] text-white/80 max-w-2xl mb-8"
         >
@@ -33,10 +43,7 @@ export const EventThemeDark: React.FC = () => {
 
         {/* Massive Center Headline (Screenshot 3) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          style={{ rotateX, scale, transformStyle: "preserve-3d" }}
           className="font-display font-black text-7xl sm:text-9xl md:text-[11rem] leading-[0.82] uppercase tracking-tighter select-none mb-12"
         >
           <div className="text-white">WHAT IF</div>
@@ -47,7 +54,7 @@ export const EventThemeDark: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <button
@@ -62,7 +69,7 @@ export const EventThemeDark: React.FC = () => {
       </div>
 
       {/* Date Ticker at Bottom (Screenshot 3) */}
-      <div className="w-full border-t border-white/10 pt-6 pb-2 mt-20 bg-[#000000]">
+      <div className="w-full border-t border-white/10 pt-6 pb-2 mt-20 bg-[#07060A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-6 text-xs font-mono-tech uppercase font-bold text-white/50 overflow-x-auto no-scrollbar">
           <span className="text-[#8000FF]">AUG 15</span>
           <span>→</span>

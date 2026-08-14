@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { EVENT_CONFIG } from '../config/eventConfig';
 
@@ -19,8 +19,17 @@ export const EventHero: React.FC = () => {
     window.open(EVENT_CONFIG.PERSPECTIVE_URL, '_blank');
   };
 
+  // Scroll Parallax Hooks
+  const { scrollY } = useScroll();
+  const titleY = useTransform(scrollY, [0, 500], [0, -70]);
+  const titleOpacity = useTransform(scrollY, [0, 450], [1, 0.35]);
+  const titleScale = useTransform(scrollY, [0, 500], [1, 0.96]);
+  const badgeY = useTransform(scrollY, [0, 500], [0, 60]);
+  const badgeRotate = useTransform(scrollY, [0, 800], [0, 150]);
+  const bannerY = useTransform(scrollY, [0, 500], [0, -40]);
+
   return (
-    <section id="hero" className="relative min-h-screen w-full bg-[#FAF9FA] text-[#0A0A0C] pt-32 pb-16 flex flex-col justify-between overflow-hidden">
+    <section id="hero" className="relative min-h-screen w-full bg-[#07060A] text-[#F4F3F7] pt-32 pb-16 flex flex-col justify-between overflow-hidden">
       
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
@@ -36,8 +45,8 @@ export const EventHero: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-3 text-xs font-mono-tech uppercase font-bold tracking-wider"
             >
-              <span className="text-[#0A0A0C]">BRIDGE THE GAP 4.0</span>
-              <span className="px-2.5 py-0.5 rounded-full bg-[#8000FF]/10 text-[#8000FF]">
+              <span className="text-[#F4F3F7]/80">BRIDGE THE GAP 4.0</span>
+              <span className="px-2.5 py-0.5 rounded-full bg-[#8000FF]/25 text-[#00F5A0] border border-[#8000FF]/40">
                 AUG—DEC 2026
               </span>
             </motion.div>
@@ -47,9 +56,10 @@ export const EventHero: React.FC = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
+              style={{ y: titleY, opacity: titleOpacity, scale: titleScale }}
               className="font-display font-black uppercase text-7xl sm:text-9xl md:text-[11rem] leading-[0.82] tracking-tighter select-none"
             >
-              <div className="text-[#0A0A0C]">BEYOND</div>
+              <div className="text-[#F4F3F7]">BEYOND</div>
               <div className="text-[#8000FF]">SYLLABUS</div>
             </motion.div>
 
@@ -58,7 +68,7 @@ export const EventHero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-lg sm:text-2xl font-bold uppercase tracking-tight text-[#0A0A0C] max-w-2xl font-sans"
+              className="text-lg sm:text-2xl font-bold uppercase tracking-tight text-[#F4F3F7]/90 max-w-2xl font-sans"
             >
               A FOUR-MONTH JOURNEY TO REDESIGN EDUCATION FOR THE NEXT GENERATION.
             </motion.h2>
@@ -73,7 +83,7 @@ export const EventHero: React.FC = () => {
               {/* Primary Purple Button */}
               <button
                 onClick={handleEnterConversationClick}
-                className="px-7 py-3.5 bg-[#8000FF] hover:bg-[#6c00db] text-white text-xs font-mono-tech uppercase font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all duration-200 shadow-md hover:scale-[1.02]"
+                className="px-7 py-3.5 bg-[#8000FF] hover:bg-[#6c00db] text-white text-xs font-mono-tech uppercase font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all duration-200 shadow-md hover:scale-[1.02] hover:shadow-[#8000FF]/20"
               >
                 <span>ENTER THE CONVERSATION</span>
                 <span>↗</span>
@@ -82,7 +92,7 @@ export const EventHero: React.FC = () => {
               {/* Secondary White Button with Black Border */}
               <button
                 onClick={handleWatchLatestClick}
-                className="px-7 py-3.5 bg-white hover:bg-black/5 text-[#0A0A0C] border-2 border-[#0A0A0C] text-xs font-mono-tech uppercase font-bold tracking-wider cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+                className="px-7 py-3.5 bg-transparent hover:bg-white/5 text-[#F4F3F7] border-2 border-white/20 hover:border-white/50 text-xs font-mono-tech uppercase font-bold tracking-wider cursor-pointer transition-all duration-200 hover:scale-[1.02]"
               >
                 WATCH THE LATEST SESSION
               </button>
@@ -98,6 +108,7 @@ export const EventHero: React.FC = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+              style={{ y: bannerY }}
               className="absolute right-0 top-0 bottom-0 w-28 bg-[#8000FF] text-white flex items-center justify-center shadow-2xl rounded-l-xs overflow-hidden"
             >
               <span className="font-display font-black text-4xl tracking-widest uppercase whitespace-nowrap transform rotate-90 origin-center text-white/90">
@@ -110,6 +121,7 @@ export const EventHero: React.FC = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
+              style={{ y: badgeY, rotate: badgeRotate }}
               className="absolute bottom-4 right-12 z-20 group cursor-pointer"
             >
               <div className="relative w-52 h-52 rounded-full bg-[#8000FF] p-3 shadow-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
@@ -133,8 +145,8 @@ export const EventHero: React.FC = () => {
                 </div>
 
                 {/* Inner Crisp White Question Circle */}
-                <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 z-10">
-                  <span className="font-display font-black text-6xl text-[#8000FF] leading-none select-none">
+                <div className="w-24 h-24 rounded-full bg-[#07060A] border-2 border-[#00F5A0] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 z-10">
+                  <span className="font-display font-black text-6xl text-[#00F5A0] leading-none select-none">
                     ?
                   </span>
                 </div>
@@ -147,8 +159,8 @@ export const EventHero: React.FC = () => {
       </div>
 
       {/* Bottom Timeline Date Stepper Ticker */}
-      <div className="w-full border-t border-black/10 pt-4 pb-2 mt-12 bg-[#FAF9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start gap-6 text-xs font-mono-tech uppercase font-bold text-[#0A0A0C]/70 overflow-x-auto no-scrollbar">
+      <div className="w-full border-t border-white/10 pt-4 pb-2 mt-12 bg-[#07060A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start gap-6 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/70 overflow-x-auto no-scrollbar">
           <span className="text-[#8000FF]">AUG 15</span>
           <span>→</span>
           <span>SEP 05</span>

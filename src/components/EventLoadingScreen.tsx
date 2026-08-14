@@ -11,17 +11,17 @@ export const EventLoadingScreen: React.FC<EventLoadingScreenProps> = ({ onComple
 
   useEffect(() => {
     // Cinematic Loading Sequence:
-    // Phase 0 (0.0s - 1.8s): Learning...
-    // Phase 1 (1.8s - 3.6s): Listening...
-    // Phase 2 (3.6s - 5.4s): Building...
-    // Phase 3 (5.4s - 7.4s): Quote ("Education should be a beginning, not a boundary.")
-    const timer1 = setTimeout(() => setPhase(1), 1800);
-    const timer2 = setTimeout(() => setPhase(2), 3600);
-    const timer3 = setTimeout(() => setPhase(3), 5400);
+    // Phase 0 (0.0s - 1.2s): Learning...
+    // Phase 1 (1.2s - 2.4s): Listening...
+    // Phase 2 (2.4s - 3.6s): Building...
+    // Phase 3 (3.6s - 5.0s): Quote ("Education should be a beginning, not a boundary.")
+    const timer1 = setTimeout(() => setPhase(1), 1200);
+    const timer2 = setTimeout(() => setPhase(2), 2400);
+    const timer3 = setTimeout(() => setPhase(3), 3600);
     const timer4 = setTimeout(() => {
       setIsLoaded(true);
       if (onComplete) onComplete();
-    }, 7400);
+    }, 5000);
 
     return () => {
       clearTimeout(timer1);
@@ -38,10 +38,10 @@ export const EventLoadingScreen: React.FC<EventLoadingScreenProps> = ({ onComple
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAFAF8] text-[#1E1E1E] select-none"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#07060A] text-[#F4F3F7] select-none"
         >
           {/* Ambient Glowing Orbs */}
-          <div className="absolute w-[50rem] h-[50rem] rounded-full bg-[#6F3FF5]/10 blur-[180px] pointer-events-none animate-pulse-glow" />
+          <div className="absolute w-[50rem] h-[50rem] rounded-full bg-[#8000FF]/15 blur-[180px] pointer-events-none animate-pulse-glow" />
 
           <div className="relative z-10 max-w-2xl mx-auto px-6 text-center flex flex-col items-center justify-center min-h-[22rem]">
             {/* Phase 0 - 2: Text Sequence */}
@@ -52,7 +52,7 @@ export const EventLoadingScreen: React.FC<EventLoadingScreenProps> = ({ onComple
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.6 }}
-                className="text-base sm:text-lg font-mono-tech uppercase tracking-[0.4em] text-[#6F3FF5] font-bold"
+                className="text-base sm:text-lg font-mono-tech uppercase tracking-[0.4em] text-[#8000FF] font-bold"
               >
                 {phase === 0 && 'Learning...'}
                 {phase === 1 && 'Listening...'}
@@ -67,7 +67,7 @@ export const EventLoadingScreen: React.FC<EventLoadingScreenProps> = ({ onComple
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.8 }}
-                className="font-serif-editorial text-3xl sm:text-5xl text-[#1E1E1E] italic leading-snug tracking-tight max-w-xl"
+                className="font-serif-editorial text-3xl sm:text-5xl text-[#F4F3F7] italic leading-snug tracking-tight max-w-xl"
               >
                 "Education should be a beginning, not a boundary."
               </motion.blockquote>

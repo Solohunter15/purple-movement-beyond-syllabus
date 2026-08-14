@@ -2,10 +2,10 @@
 
 @layer base {
   :root {
-    --bg-primary: #FAF9FA;
+    --bg-primary: #07060A;
     --bg-dark: #000000;
-    --text-primary: #0A0A0C;
-    --text-muted: #666666;
+    --text-primary: #F4F3F7;
+    --text-muted: #9F9CAE;
     --accent-purple: #8000FF;
     --accent-purple-vivid: #7C00FF;
     --accent-mint: #00F5A0;
@@ -76,14 +76,14 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAFAF8;
+  background: #07060A;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(111, 63, 245, 0.25);
+  background: rgba(128, 0, 255, 0.4);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(111, 63, 245, 0.5);
+  background: rgba(128, 0, 255, 0.7);
 }
 
 /* ==========================================================================
@@ -92,45 +92,45 @@
 
 /* 1. Spatial Glass Floating Card */
 .spatial-glass-card {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(28px) saturate(190%);
   -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 
-    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-    0 4px 20px -2px rgba(0, 0, 0, 0.03),
-    0 16px 40px -10px rgba(111, 63, 245, 0.07);
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.04),
+    0 4px 20px -2px rgba(0, 0, 0, 0.5),
+    0 16px 40px -10px rgba(128, 0, 255, 0.12);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
 }
 
 .spatial-glass-card:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(111, 63, 245, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(128, 0, 255, 0.35);
   box-shadow: 
-    inset 0 2px 2px 0 rgba(255, 255, 255, 1),
-    0 12px 30px -4px rgba(0, 0, 0, 0.05),
-    0 24px 50px -12px rgba(111, 63, 245, 0.18);
+    inset 0 2px 2px 0 rgba(255, 255, 255, 0.08),
+    0 12px 30px -4px rgba(0, 0, 0, 0.7),
+    0 24px 50px -12px rgba(128, 0, 255, 0.25);
   transform: translateY(-5px) scale(1.01);
 }
 
 /* 2. Spatial Floating Pill Dock */
 .spatial-glass-pill {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
-    0 8px 32px -4px rgba(0, 0, 0, 0.06),
-    0 16px 48px -8px rgba(111, 63, 245, 0.1);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.04),
+    0 8px 32px -4px rgba(0, 0, 0, 0.5),
+    0 16px 48px -8px rgba(128, 0, 255, 0.12);
 }
 
 /* 3. Spatial Inset Recessed Tray */
 .spatial-inset {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* 4. Spatial Primary Action Button */
@@ -154,22 +154,22 @@
 
 /* 5. Spatial Secondary Button */
 .spatial-button-secondary {
-  background: rgba(255, 255, 255, 0.85);
-  color: #1E1E1E;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  color: #F4F3F7;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8),
-    0 2px 8px 0 rgba(0, 0, 0, 0.04);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 8px 0 rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .spatial-button-secondary:hover {
-  background: #ffffff;
-  border-color: rgba(111, 63, 245, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(128, 0, 255, 0.45);
   transform: translateY(-2px);
   box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
-    0 6px 18px 0 rgba(0, 0, 0, 0.08);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.1),
+    0 6px 18px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* Infinite Marquee */
