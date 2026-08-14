@@ -41,6 +41,38 @@ export const COMMUNITY_PARTNERS_CONFIG: PartnerLogo[] = [
     rowOrder: 2
   },
   {
+    id: 'part-tinkerhub',
+    name: 'TinkerHub Foundation',
+    category: 'Learning Ecosystem',
+    logo: '/community-partners/tinkerhub.png',
+    description: 'Empowering the next generation of tech talent through peer-to-peer learning, bootcamps, and campus communities.',
+    rowOrder: 2
+  },
+  {
+    id: 'part-ieee',
+    name: 'IEEE',
+    category: 'Learning Ecosystem',
+    logo: '/community-partners/ieee.svg',
+    description: 'The world\'s largest technical professional organization dedicated to advancing technology for the benefit of humanity.',
+    rowOrder: 2
+  },
+  {
+    id: 'part-csi',
+    name: 'Computer Society of India',
+    category: 'Learning Ecosystem',
+    logo: '/community-partners/csi.png',
+    description: 'A national body of computer professionals fostering scientific and educational activities in IT.',
+    rowOrder: 2
+  },
+  {
+    id: 'part-aws-sbg',
+    name: 'AWS Student Builder Group',
+    category: 'Learning Ecosystem',
+    logo: '/community-partners/aws-sbg.svg',
+    description: 'A student-led community focused on cloud computing, AWS technologies, and hands-on builder projects.',
+    rowOrder: 2
+  },
+  {
     id: 'part-kites-india',
     name: 'Kites India',
     category: 'Youth & Community',
