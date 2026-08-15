@@ -15,11 +15,11 @@ export const EVENT_CONFIG = {
   // External URLs & Forms
   CONVERSATION_URL: 'https://forms.gle/twTx7SwAiMNtEnax6',
   JOIN_US_URL: 'https://purple-movement.com/',
-  REGISTRATION_URL: 'https://purple-movement.com/',
+  REGISTRATION_URL: 'https://beyond-syllabus-tau.vercel.app',
   PERSPECTIVE_URL: 'https://forms.gle/twTx7SwAiMNtEnax6',
   YOUTUBE_URL: 'https://www.youtube.com/live/qXdBTk5XFsE?si=wZiBMuKHiiMf-8VP',
   LATEST_SESSION_URL: 'https://www.youtube.com/live/qXdBTk5XFsE?si=wZiBMuKHiiMf-8VP',
-  PLATFORM_URL: 'https://purple-movement.com/',
+  PLATFORM_URL: 'https://beyond-syllabus-tau.vercel.app',
   
   // Ecosystem Stakeholders
   STAKEHOLDERS: [

@@ -23,7 +23,7 @@ export const EventThemeDark: React.FC = () => {
       origin: { y: 0.6 }
     });
     setTimeout(() => {
-      window.open(EVENT_CONFIG.REGISTRATION_URL, '_blank');
+      window.open(EVENT_CONFIG.PLATFORM_URL || EVENT_CONFIG.REGISTRATION_URL, '_blank');
     }, 300);
   };
 
