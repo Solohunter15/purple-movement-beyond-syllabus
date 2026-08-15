@@ -13,8 +13,10 @@ export const EVENT_CONFIG = {
   EVENT_DESCRIPTION: 'One resignation is not a revolution. Changing one minister doesn’t change the system. Beyond Syllabus brings together students, educators, industry, government, and parents to move from anger to action and rebuild institutions for the AI era.',
   
   // External URLs & Forms
+  CONVERSATION_URL: 'https://forms.gle/twTx7SwAiMNtEnax6',
+  JOIN_US_URL: 'https://purple-movement.com/',
   REGISTRATION_URL: 'https://purple-movement.com/',
-  PERSPECTIVE_URL: 'https://forms.gle/sN4NeDo9vdNmUGsHA',
+  PERSPECTIVE_URL: 'https://forms.gle/twTx7SwAiMNtEnax6',
   YOUTUBE_URL: 'https://www.youtube.com/live/qXdBTk5XFsE?si=wZiBMuKHiiMf-8VP',
   LATEST_SESSION_URL: 'https://www.youtube.com/live/qXdBTk5XFsE?si=wZiBMuKHiiMf-8VP',
   PLATFORM_URL: 'https://purple-movement.com/',

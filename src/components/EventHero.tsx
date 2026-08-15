@@ -14,8 +14,12 @@ export const EventHero: React.FC = () => {
       origin: { y: 0.6 }
     });
     setTimeout(() => {
-      window.open(EVENT_CONFIG.REGISTRATION_URL, '_blank');
+      window.open(EVENT_CONFIG.CONVERSATION_URL, '_blank');
     }, 300);
+  };
+
+  const handleJoinUsClick = () => {
+    window.open(EVENT_CONFIG.JOIN_US_URL || EVENT_CONFIG.PLATFORM_URL, '_blank');
   };
 
   const handleWatchLatestClick = () => {
@@ -31,37 +35,58 @@ export const EventHero: React.FC = () => {
   return (
     <section
       id="hero"
-      className={`relative min-h-screen w-full pt-36 sm:pt-40 pb-12 flex flex-col justify-between overflow-hidden transition-colors duration-300 ${
+      className={`relative min-h-screen w-full pt-32 sm:pt-36 pb-12 flex flex-col justify-between overflow-hidden transition-colors duration-300 ${
         isDayMode ? 'bg-[#F7F6FB] text-[#0A0713]' : 'bg-[#07060A] text-[#F4F3F7]'
       }`}
     >
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
+        
+        {/* Top Header Meta Bar with Pill Tag (Left) and JOIN US Button (Right) */}
+        <div className="flex items-center justify-between gap-4 mb-6 sm:mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 sm:gap-3 text-xs font-mono-tech uppercase font-bold tracking-wider"
+          >
+            <span className={isDayMode ? 'text-[#241F33]/80' : 'text-[#F4F3F7]/80'}>
+              BRIDGE THE GAP 4.0
+            </span>
+            <span
+              className={`px-2.5 py-0.5 rounded-full border text-[11px] sm:text-xs ${
+                isDayMode
+                  ? 'bg-[#7500EB]/10 text-[#008F5B] border-[#7500EB]/25'
+                  : 'bg-[#8000FF]/25 text-[#00F5A0] border-[#8000FF]/40'
+              }`}
+            >
+              JULY—DEC 2026
+            </span>
+          </motion.div>
+
+          {/* Top Right JOIN US Button */}
+          <motion.button
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={handleJoinUsClick}
+            className={`px-5 py-2.5 sm:px-6 sm:py-2.5 rounded-xs text-xs font-mono-tech uppercase font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all duration-200 shadow-md ${
+              isDayMode
+                ? 'bg-[#7500EB] hover:bg-[#6200c4] text-white shadow-[#7500EB]/20 hover:shadow-[#7500EB]/35'
+                : 'bg-[#8000FF] hover:bg-[#6c00db] text-white shadow-[#8000FF]/25 hover:shadow-[#8000FF]/40'
+            }`}
+          >
+            <span>JOIN US</span>
+            <span className="text-sm">↗</span>
+          </motion.button>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Headlines & CTAs */}
           <div className="lg:col-span-9 space-y-6">
-            
-            {/* Top Pill Tag */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 text-xs font-mono-tech uppercase font-bold tracking-wider"
-            >
-              <span className={isDayMode ? 'text-[#241F33]/80' : 'text-[#F4F3F7]/80'}>
-                BRIDGE THE GAP 4.0
-              </span>
-              <span
-                className={`px-2.5 py-0.5 rounded-full border ${
-                  isDayMode
-                    ? 'bg-[#7500EB]/10 text-[#008F5B] border-[#7500EB]/25'
-                    : 'bg-[#8000FF]/25 text-[#00F5A0] border-[#8000FF]/40'
-                }`}
-              >
-                JULY—DEC 2026
-              </span>
-            </motion.div>
 
             {/* Massive Display Title */}
             <div
