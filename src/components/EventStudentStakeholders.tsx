@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 interface StudentStakeholder {
   name: string;
@@ -10,6 +11,8 @@ interface StudentStakeholder {
 }
 
 export const EventStudentStakeholders: React.FC = () => {
+  const { isDayMode } = useTheme();
+
   const students: StudentStakeholder[] = [
     {
       name: 'Arundhathi Krishna',
@@ -112,18 +115,33 @@ export const EventStudentStakeholders: React.FC = () => {
   ];
 
   return (
-    <section id="students" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
+    <section
+      id="students"
+      className={`py-28 relative overflow-hidden transition-colors duration-300 border-t ${
+        isDayMode
+          ? 'bg-[#F7F6FB] text-[#0A0713] border-[#E4DFF2]'
+          : 'bg-[#0A0910] text-[#F4F3F7] border-white/10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-16 space-y-2">
-          <span className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold">
+          <span
+            className={`text-xs font-mono-tech uppercase tracking-[0.25em] block font-bold ${
+              isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'
+            }`}
+          >
             CO-CREATORS & REPRESENTATIVES
           </span>
-          <h2 className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight">
+          <h2
+            className={`font-display font-black text-5xl sm:text-7xl uppercase tracking-tight ${
+              isDayMode ? 'text-[#0A0713]' : 'text-[#F4F3F7]'
+            }`}
+          >
             STUDENTS & STUDENT COMMUNITIES
           </h2>
-          <p className="text-sm text-[#9F9CAE] font-sans">
+          <p className={`text-sm font-sans ${isDayMode ? 'text-[#625D73]' : 'text-[#9F9CAE]'}`}>
             Students and student communities serving as the foundational stakeholders chosen to lead academic and capability transformation.
           </p>
         </div>
@@ -137,11 +155,21 @@ export const EventStudentStakeholders: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: (idx % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-[#111019] rounded-2xl border-2 border-white/5 p-5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/5 group"
+              className={`rounded-2xl border-2 p-5 flex flex-col justify-between transition-all duration-300 group ${
+                isDayMode
+                  ? 'bg-white border-[#E4DFF2] hover:border-[#7500EB] shadow-xs hover:shadow-lg hover:shadow-purple-500/10'
+                  : 'bg-[#111019] border-white/5 hover:border-[#8000FF] shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/5'
+              }`}
             >
               <div>
                 {/* Photo Frame */}
-                <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-5 border border-white/5 bg-[#171622] shadow-inner">
+                <div
+                  className={`relative w-full aspect-square rounded-xl overflow-hidden mb-5 border shadow-inner ${
+                    isDayMode
+                      ? 'border-[#E4DFF2] bg-[#EDE8F7]'
+                      : 'border-white/5 bg-[#171622]'
+                  }`}
+                >
                   <img
                     src={student.image}
                     alt={student.name}
@@ -155,30 +183,60 @@ export const EventStudentStakeholders: React.FC = () => {
                       }
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07060A]/40 via-transparent to-transparent opacity-50" />
+                  <div
+                    className={`absolute inset-0 opacity-40 bg-gradient-to-t ${
+                      isDayMode ? 'from-black/20 via-transparent to-transparent' : 'from-[#07060A]/40 via-transparent to-transparent'
+                    }`}
+                  />
                 </div>
 
                 {/* Info */}
-                <h3 className="font-display font-black text-2xl text-[#F4F3F7] uppercase group-hover:text-[#00F5A0] transition-colors mb-1">
+                <h3
+                  className={`font-display font-black text-2xl uppercase transition-colors mb-1 ${
+                    isDayMode
+                      ? 'text-[#0A0713] group-hover:text-[#7500EB]'
+                      : 'text-[#F4F3F7] group-hover:text-[#00F5A0]'
+                  }`}
+                >
                   {student.name}
                 </h3>
 
-                <p className="text-xs text-[#8000FF] font-bold mb-3 font-mono-tech uppercase">
+                <p
+                  className={`text-xs font-bold mb-3 font-mono-tech uppercase ${
+                    isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'
+                  }`}
+                >
                   {student.designation}
                 </p>
 
-                <p className="text-[10px] text-[#F4F3F7] font-black uppercase mb-3 font-sans">
+                <p
+                  className={`text-[10px] font-black uppercase mb-3 font-sans ${
+                    isDayMode ? 'text-[#241F33]' : 'text-[#F4F3F7]'
+                  }`}
+                >
                   {student.organization}
                 </p>
 
-                <p className="text-xs text-[#9F9CAE] leading-relaxed font-sans font-normal border-l-2 border-[#8000FF]/40 pl-3">
+                <p
+                  className={`text-xs leading-relaxed font-sans font-normal border-l-2 pl-3 ${
+                    isDayMode
+                      ? 'text-[#625D73] border-[#7500EB]/30'
+                      : 'text-[#9F9CAE] border-[#8000FF]/40'
+                  }`}
+                >
                   {student.bio}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[9px] font-mono-tech text-[#9F9CAE] font-bold uppercase group-hover:text-[#F4F3F7] transition-colors">
+              <div
+                className={`mt-6 pt-4 border-t flex items-center justify-between text-[9px] font-mono-tech font-bold uppercase transition-colors ${
+                  isDayMode
+                    ? 'border-[#E4DFF2] text-[#625D73] group-hover:text-[#0A0713]'
+                    : 'border-white/5 text-[#9F9CAE] group-hover:text-[#F4F3F7]'
+                }`}
+              >
                 <span>STAKEHOLDER</span>
-                <span className="text-[#00F5A0]">STUDENT</span>
+                <span className={isDayMode ? 'text-[#008F5B]' : 'text-[#00F5A0]'}>STUDENT</span>
               </div>
             </motion.div>
           ))}
@@ -188,3 +246,4 @@ export const EventStudentStakeholders: React.FC = () => {
     </section>
   );
 };
+

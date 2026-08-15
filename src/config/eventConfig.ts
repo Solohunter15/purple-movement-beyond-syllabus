@@ -15,7 +15,8 @@ export const EVENT_CONFIG = {
   // External URLs & Forms
   REGISTRATION_URL: 'https://purple-movement.com/',
   PERSPECTIVE_URL: 'https://forms.gle/sN4NeDo9vdNmUGsHA',
-  YOUTUBE_URL: 'https://www.youtube.com/@ThePurpleMovement',
+  YOUTUBE_URL: 'https://www.youtube.com/live/qXdBTk5XFsE?si=wZiBMuKHiiMf-8VP',
+  LATEST_SESSION_URL: 'https://www.youtube.com/live/qXdBTk5XFsE?si=wZiBMuKHiiMf-8VP',
   PLATFORM_URL: 'https://purple-movement.com/',
   
   // Ecosystem Stakeholders

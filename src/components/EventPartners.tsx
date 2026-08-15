@@ -1,13 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { COMMUNITY_PARTNERS_CONFIG } from '../config/partnersConfig';
+import { useTheme } from '../context/ThemeContext';
 
 export const EventPartners: React.FC = () => {
+  const { isDayMode } = useTheme();
+
   return (
-    <section id="partners" className="py-20 relative overflow-hidden bg-[#07060A] text-[#F4F3F7] border-t border-white/10">
+    <section
+      id="partners"
+      className={`py-20 relative overflow-hidden transition-colors duration-300 border-t ${
+        isDayMode
+          ? 'bg-[#FFFFFF] text-[#0A0713] border-[#E4DFF2]'
+          : 'bg-[#07060A] text-[#F4F3F7] border-white/10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header — animated reveal */}
+        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -20,7 +30,9 @@ export const EventPartners: React.FC = () => {
               hidden: { opacity: 0, x: -24 },
               visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
             }}
-            className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold"
+            className={`text-xs font-mono-tech uppercase tracking-[0.25em] block font-bold ${
+              isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'
+            }`}
           >
             COMMUNITY PARTNERS
           </motion.span>
@@ -33,7 +45,9 @@ export const EventPartners: React.FC = () => {
                   transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
                 }
               }}
-              className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight"
+              className={`font-display font-black text-5xl sm:text-7xl uppercase tracking-tight ${
+                isDayMode ? 'text-[#0A0713]' : 'text-[#F4F3F7]'
+              }`}
             >
               ORGANISATIONS POWERING THE MOVEMENT
             </motion.h2>
@@ -43,7 +57,7 @@ export const EventPartners: React.FC = () => {
               hidden: { opacity: 0, y: 10 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
             }}
-            className="text-xs sm:text-sm text-[#9F9CAE] font-sans"
+            className={`text-xs sm:text-sm font-sans ${isDayMode ? 'text-[#625D73]' : 'text-[#9F9CAE]'}`}
           >
             Hover over any partner card to explore their mission.
           </motion.p>
@@ -58,10 +72,14 @@ export const EventPartners: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '0px 0px -60px 0px' }}
               transition={{ duration: 0.5, delay: idx * 0.04 }}
-              className="group relative bg-[#111019] rounded-2xl border-2 border-white/5 p-4 sm:p-5 flex flex-col items-center justify-between h-52 hover:border-[#8000FF] transition-all duration-300 cursor-pointer overflow-hidden shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/15"
+              className={`group relative rounded-2xl border-2 p-4 sm:p-5 flex flex-col items-center justify-between h-52 transition-all duration-300 cursor-pointer overflow-hidden ${
+                isDayMode
+                  ? 'bg-[#F7F6FB] border-[#E4DFF2] hover:border-[#7500EB] shadow-xs hover:shadow-lg hover:shadow-purple-500/10'
+                  : 'bg-[#111019] border-white/5 hover:border-[#8000FF] shadow-xs hover:shadow-lg hover:shadow-[#8000FF]/15'
+              }`}
             >
               {/* Default State: Centered Wide Logo Frame */}
-              <div className="w-full h-28 rounded-xl bg-white flex items-center justify-center p-3 shadow-inner transition-transform duration-300">
+              <div className="w-full h-28 rounded-xl bg-white flex items-center justify-center p-3 shadow-inner transition-transform duration-300 border border-black/5">
                 <img
                   src={partner.logo}
                   alt={partner.name}
@@ -71,7 +89,11 @@ export const EventPartners: React.FC = () => {
 
               {/* Partner Name Label */}
               <div className="w-full text-center mt-2 px-1">
-                <span className="text-[11px] font-mono-tech uppercase font-bold text-[#F4F3F7]/85 truncate block tracking-wide">
+                <span
+                  className={`text-[11px] font-mono-tech uppercase font-bold truncate block tracking-wide ${
+                    isDayMode ? 'text-[#0A0713]' : 'text-[#F4F3F7]/85'
+                  }`}
+                >
                   {partner.name}
                 </span>
               </div>
@@ -117,3 +139,4 @@ export const EventPartners: React.FC = () => {
     </section>
   );
 };
+

@@ -2,8 +2,11 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { EVENT_CONFIG } from '../config/eventConfig';
+import { useTheme } from '../context/ThemeContext';
 
 export const EventHero: React.FC = () => {
+  const { isDayMode } = useTheme();
+
   const handleEnterConversationClick = () => {
     confetti({
       particleCount: 80,
@@ -16,7 +19,7 @@ export const EventHero: React.FC = () => {
   };
 
   const handleWatchLatestClick = () => {
-    window.open(EVENT_CONFIG.YOUTUBE_URL, '_blank');
+    window.open(EVENT_CONFIG.LATEST_SESSION_URL || EVENT_CONFIG.YOUTUBE_URL, '_blank');
   };
 
   // Scroll Parallax Hooks
@@ -26,8 +29,12 @@ export const EventHero: React.FC = () => {
   const bannerY = useTransform(scrollY, [0, 500], [0, -40]);
 
   return (
-    <section id="hero" className="relative min-h-screen w-full bg-[#07060A] text-[#F4F3F7] pt-36 sm:pt-40 pb-12 flex flex-col justify-between overflow-hidden">
-      
+    <section
+      id="hero"
+      className={`relative min-h-screen w-full pt-36 sm:pt-40 pb-12 flex flex-col justify-between overflow-hidden transition-colors duration-300 ${
+        isDayMode ? 'bg-[#F7F6FB] text-[#0A0713]' : 'bg-[#07060A] text-[#F4F3F7]'
+      }`}
+    >
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -42,8 +49,16 @@ export const EventHero: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-3 text-xs font-mono-tech uppercase font-bold tracking-wider"
             >
-              <span className="text-[#F4F3F7]/80">BRIDGE THE GAP 4.0</span>
-              <span className="px-2.5 py-0.5 rounded-full bg-[#8000FF]/25 text-[#00F5A0] border border-[#8000FF]/40">
+              <span className={isDayMode ? 'text-[#241F33]/80' : 'text-[#F4F3F7]/80'}>
+                BRIDGE THE GAP 4.0
+              </span>
+              <span
+                className={`px-2.5 py-0.5 rounded-full border ${
+                  isDayMode
+                    ? 'bg-[#7500EB]/10 text-[#008F5B] border-[#7500EB]/25'
+                    : 'bg-[#8000FF]/25 text-[#00F5A0] border-[#8000FF]/40'
+                }`}
+              >
                 JULY—DEC 2026
               </span>
             </motion.div>
@@ -52,8 +67,8 @@ export const EventHero: React.FC = () => {
             <div
               className="font-display font-black uppercase text-6xl sm:text-8xl md:text-[8rem] lg:text-[9.2rem] leading-[0.85] tracking-tighter select-none"
             >
-              <div className="text-[#F4F3F7]">BEYOND</div>
-              <div className="text-[#8000FF]">SYLLABUS</div>
+              <div className={isDayMode ? 'text-[#0A0713]' : 'text-[#F4F3F7]'}>BEYOND</div>
+              <div className={isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'}>SYLLABUS</div>
             </div>
 
             {/* Subheading */}
@@ -61,7 +76,9 @@ export const EventHero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-lg sm:text-2xl font-bold uppercase tracking-tight text-[#F4F3F7]/90 max-w-2xl font-sans"
+              className={`text-lg sm:text-2xl font-bold uppercase tracking-tight max-w-2xl font-sans ${
+                isDayMode ? 'text-[#241F33]' : 'text-[#F4F3F7]/90'
+              }`}
             >
               July - Dec | A SIX-MONTH JOURNEY TO REDESIGN EDUCATION FOR THE NEXT GENERATION.
             </motion.h2>
@@ -76,16 +93,20 @@ export const EventHero: React.FC = () => {
               {/* Primary Purple Button */}
               <button
                 onClick={handleEnterConversationClick}
-                className="px-7 py-3.5 bg-[#8000FF] hover:bg-[#6c00db] text-white text-xs font-mono-tech uppercase font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all duration-200 shadow-md hover:scale-[1.02] hover:shadow-[#8000FF]/20"
+                className="px-7 py-3.5 bg-[#8000FF] hover:bg-[#6c00db] text-white text-xs font-mono-tech uppercase font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all duration-200 shadow-md hover:scale-[1.02] hover:shadow-[#8000FF]/20 rounded-xs"
               >
                 <span>ENTER THE CONVERSATION</span>
                 <span>↗</span>
               </button>
 
-              {/* Secondary White Button with Black Border */}
+              {/* Secondary Button */}
               <button
                 onClick={handleWatchLatestClick}
-                className="px-7 py-3.5 bg-transparent hover:bg-white/5 text-[#F4F3F7] border-2 border-white/20 hover:border-white/50 text-xs font-mono-tech uppercase font-bold tracking-wider cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+                className={`px-7 py-3.5 text-xs font-mono-tech uppercase font-bold tracking-wider cursor-pointer transition-all duration-200 hover:scale-[1.02] rounded-xs ${
+                  isDayMode
+                    ? 'bg-white hover:bg-[#EDE8F7] text-[#0A0713] border-2 border-[#D8D1EC] hover:border-[#7500EB] shadow-xs'
+                    : 'bg-transparent hover:bg-white/5 text-[#F4F3F7] border-2 border-white/20 hover:border-white/50'
+                }`}
               >
                 WATCH THE LATEST SESSION
               </button>
@@ -93,7 +114,7 @@ export const EventHero: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Floating Sidebar Banner & Circular Interactive Badge (Screenshot 1) */}
+          {/* Right Column: Floating Sidebar Banner & Circular Interactive Badge */}
           <div className="hidden lg:flex lg:col-span-3 justify-end relative h-full min-h-[460px]">
             
             {/* Vertical Sideways Banner Block */}
@@ -137,9 +158,19 @@ export const EventHero: React.FC = () => {
                   </svg>
                 </div>
 
-                {/* Inner Crisp White Question Circle */}
-                <div className="w-24 h-24 rounded-full bg-[#07060A] border-2 border-[#00F5A0] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 z-10">
-                  <span className="font-display font-black text-6xl text-[#00F5A0] leading-none select-none">
+                {/* Inner Question Circle */}
+                <div
+                  className={`w-24 h-24 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 z-10 ${
+                    isDayMode
+                      ? 'bg-white border-2 border-[#008F5B]'
+                      : 'bg-[#07060A] border-2 border-[#00F5A0]'
+                  }`}
+                >
+                  <span
+                    className={`font-display font-black text-6xl leading-none select-none ${
+                      isDayMode ? 'text-[#008F5B]' : 'text-[#00F5A0]'
+                    }`}
+                  >
                     ?
                   </span>
                 </div>
@@ -152,11 +183,21 @@ export const EventHero: React.FC = () => {
       </div>
 
       {/* Bottom Timeline Date Stepper Ticker */}
-      <div className="w-full border-t border-white/10 pt-4 pb-2 mt-12 bg-[#07060A]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start gap-6 text-xs font-mono-tech uppercase font-bold text-[#F4F3F7]/70 overflow-x-auto no-scrollbar">
-          <span className="text-[#8000FF]">JULY</span>
+      <div
+        className={`w-full pt-4 pb-2 mt-12 transition-colors ${
+          isDayMode
+            ? 'border-t border-[#E4DFF2] bg-[#F7F6FB]'
+            : 'border-t border-white/10 bg-[#07060A]'
+        }`}
+      >
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start gap-6 text-xs font-mono-tech uppercase font-bold overflow-x-auto no-scrollbar ${
+            isDayMode ? 'text-[#241F33]/70' : 'text-[#F4F3F7]/70'
+          }`}
+        >
+          <span className={isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'}>JULY</span>
           <span>→</span>
-          <span className="text-[#8000FF]">AUG 15</span>
+          <span className={isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'}>AUG 15</span>
           <span>→</span>
           <span>SEP 05</span>
           <span>→</span>
@@ -164,10 +205,11 @@ export const EventHero: React.FC = () => {
           <span>→</span>
           <span>NOV 14</span>
           <span>→</span>
-          <span className="text-[#8000FF]">DEC</span>
+          <span className={isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'}>DEC</span>
         </div>
       </div>
 
     </section>
   );
 };
+

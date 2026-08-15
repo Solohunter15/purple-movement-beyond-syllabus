@@ -7,13 +7,33 @@
     <meta name="description" content="Beyond Syllabus — An open collaborative framework for education transformation by The Purple Movement." />
     <title>Beyond Syllabus | The Purple Movement</title>
 
+    <!-- Theme Initialization Script to Prevent Flash -->
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('beyond_syllabus_theme');
+          var theme = savedTheme;
+          if (!theme) {
+            theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'dark';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+          if (theme === 'day') {
+            document.documentElement.classList.add('day-mode');
+          } else {
+            document.documentElement.classList.remove('day-mode');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Google Fonts for High Contrast Bold Editorial Design -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#FAFAF8] text-[#1E1E1E] antialiased selection:bg-[#6F3FF5] selection:text-white">
+  <body class="antialiased selection:bg-[#8000FF] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+

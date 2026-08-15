@@ -3,13 +3,49 @@
 @layer base {
   :root {
     --bg-primary: #07060A;
-    --bg-dark: #000000;
+    --bg-secondary: #0A0910;
+    --bg-card: #111019;
+    --bg-card-hover: #181624;
+    --bg-inset: #171622;
     --text-primary: #F4F3F7;
+    --text-secondary: #E4E2ED;
     --text-muted: #9F9CAE;
     --accent-purple: #8000FF;
     --accent-purple-vivid: #7C00FF;
+    --accent-purple-subtle: rgba(128, 0, 255, 0.15);
     --accent-mint: #00F5A0;
     --accent-mint-dark: #00D084;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-card: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --nav-bg: rgba(7, 6, 10, 0.85);
+    --nav-scrolled-bg: rgba(7, 6, 10, 0.95);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --footer-bg: #040306;
+  }
+
+  html[data-theme='day'],
+  html.day-mode {
+    --bg-primary: #F7F6FB;
+    --bg-secondary: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F2EEFB;
+    --bg-inset: #EDE8F7;
+    --text-primary: #0A0713;
+    --text-secondary: #221D30;
+    --text-muted: #625D73;
+    --accent-purple: #7500EB;
+    --accent-purple-vivid: #6E00DF;
+    --accent-purple-subtle: rgba(117, 0, 235, 0.08);
+    --accent-mint: #00A86B;
+    --accent-mint-dark: #008F5B;
+    --border-subtle: rgba(117, 0, 235, 0.1);
+    --border-card: #E4DFF2;
+    --border-strong: #CEC7E5;
+    --nav-bg: rgba(247, 246, 251, 0.88);
+    --nav-scrolled-bg: rgba(247, 246, 251, 0.96);
+    --nav-border: rgba(117, 0, 235, 0.12);
+    --footer-bg: #ECE8F7;
   }
 
   html {
@@ -17,12 +53,14 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -50,19 +88,19 @@
 
 /* Color Utilities */
 .bg-purple-vivid {
-  background-color: #8000FF;
+  background-color: var(--accent-purple);
 }
 
 .text-purple-vivid {
-  color: #8000FF;
+  color: var(--accent-purple);
 }
 
 .bg-mint-accent {
-  background-color: #00F5A0;
+  background-color: var(--accent-mint);
 }
 
 .text-mint-accent {
-  color: #00F5A0;
+  color: var(--accent-mint);
 }
 
 /* Sideways Vertical Text Utility */
@@ -76,14 +114,14 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #07060A;
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(128, 0, 255, 0.4);
+  background: rgba(128, 0, 255, 0.35);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(128, 0, 255, 0.7);
+  background: rgba(128, 0, 255, 0.65);
 }
 
 /* ==========================================================================
@@ -104,6 +142,16 @@
   transform-style: preserve-3d;
 }
 
+html[data-theme='day'] .spatial-glass-card,
+html.day-mode .spatial-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(117, 0, 235, 0.12);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    0 4px 20px -2px rgba(117, 0, 235, 0.06),
+    0 16px 36px -10px rgba(117, 0, 235, 0.08);
+}
+
 .spatial-glass-card:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(128, 0, 255, 0.35);
@@ -112,6 +160,16 @@
     0 12px 30px -4px rgba(0, 0, 0, 0.7),
     0 24px 50px -12px rgba(128, 0, 255, 0.25);
   transform: translateY(-5px) scale(1.01);
+}
+
+html[data-theme='day'] .spatial-glass-card:hover,
+html.day-mode .spatial-glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(117, 0, 235, 0.4);
+  box-shadow: 
+    inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+    0 12px 30px -4px rgba(117, 0, 235, 0.12),
+    0 24px 50px -12px rgba(117, 0, 235, 0.16);
 }
 
 /* 2. Spatial Floating Pill Dock */
@@ -126,11 +184,28 @@
     0 16px 48px -8px rgba(128, 0, 255, 0.12);
 }
 
+html[data-theme='day'] .spatial-glass-pill,
+html.day-mode .spatial-glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(117, 0, 235, 0.15);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8),
+    0 8px 32px -4px rgba(117, 0, 235, 0.08),
+    0 16px 48px -8px rgba(117, 0, 235, 0.12);
+}
+
 /* 3. Spatial Inset Recessed Tray */
 .spatial-inset {
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='day'] .spatial-inset,
+html.day-mode .spatial-inset {
+  background: #EDE8F7;
+  border: 1px solid rgba(117, 0, 235, 0.1);
+  box-shadow: inset 0 2px 4px 0 rgba(117, 0, 235, 0.06);
 }
 
 /* 4. Spatial Primary Action Button */
@@ -155,12 +230,22 @@
 /* 5. Spatial Secondary Button */
 .spatial-button-secondary {
   background: rgba(255, 255, 255, 0.08);
-  color: #F4F3F7;
+  color: var(--text-primary);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.06),
     0 2px 8px 0 rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme='day'] .spatial-button-secondary,
+html.day-mode .spatial-button-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-primary);
+  border: 1px solid #D9D3EA;
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 8px 0 rgba(117, 0, 235, 0.06);
 }
 
 .spatial-button-secondary:hover {
@@ -170,6 +255,15 @@
   box-shadow: 
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.1),
     0 6px 18px 0 rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='day'] .spatial-button-secondary:hover,
+html.day-mode .spatial-button-secondary:hover {
+  background: #FFFFFF;
+  border-color: #7500EB;
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 6px 18px 0 rgba(117, 0, 235, 0.15);
 }
 
 /* Infinite Marquee */
@@ -223,4 +317,5 @@
   animation: sectionGlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   pointer-events: none;
 }
+
 

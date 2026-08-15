@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 export const EventOutcomes: React.FC = () => {
+  const { isDayMode } = useTheme();
+
   const outcomes = [
     {
       number: '01',
@@ -36,7 +39,14 @@ export const EventOutcomes: React.FC = () => {
   ];
 
   return (
-    <section id="outcomes" className="py-28 relative overflow-hidden bg-[#0A0910] text-[#F4F3F7] border-t border-white/10">
+    <section
+      id="outcomes"
+      className={`py-28 relative overflow-hidden transition-colors duration-300 border-t ${
+        isDayMode
+          ? 'bg-[#FFFFFF] text-[#0A0713] border-[#E4DFF2]'
+          : 'bg-[#0A0910] text-[#F4F3F7] border-white/10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
@@ -52,7 +62,9 @@ export const EventOutcomes: React.FC = () => {
               hidden: { opacity: 0, x: -24 },
               visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
             }}
-            className="text-xs font-mono-tech uppercase tracking-[0.25em] text-[#8000FF] block font-bold"
+            className={`text-xs font-mono-tech uppercase tracking-[0.25em] block font-bold ${
+              isDayMode ? 'text-[#7500EB]' : 'text-[#8000FF]'
+            }`}
           >
             EXPECTED OUTCOMES / PROTOTYPES
           </motion.span>
@@ -65,7 +77,9 @@ export const EventOutcomes: React.FC = () => {
                   transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }
                 }
               }}
-              className="font-display font-black text-5xl sm:text-7xl uppercase text-[#F4F3F7] tracking-tight"
+              className={`font-display font-black text-5xl sm:text-7xl uppercase tracking-tight ${
+                isDayMode ? 'text-[#0A0713]' : 'text-[#F4F3F7]'
+              }`}
             >
               WHAT WE HOPE TO BUILD
             </motion.h2>
@@ -75,13 +89,13 @@ export const EventOutcomes: React.FC = () => {
               hidden: { opacity: 0, y: 12 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
             }}
-            className="text-sm text-[#9F9CAE] font-sans"
+            className={`text-sm font-sans ${isDayMode ? 'text-[#625D73]' : 'text-[#9F9CAE]'}`}
           >
             Concrete artifacts and ongoing initiatives, not just speeches.
           </motion.p>
         </motion.div>
 
-        {/* 6 Outcomes Cards — stagger from bottom-left, no blur */}
+        {/* 6 Outcomes Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {outcomes.map((item, idx) => (
             <motion.div
@@ -90,23 +104,39 @@ export const EventOutcomes: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, margin: '0px 0px -60px 0px' }}
               transition={{ duration: 0.85, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-[#111019] rounded-2xl p-7 border-2 border-white/5 flex flex-col justify-between hover:border-[#8000FF] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/10 group"
+              className={`rounded-2xl p-7 border-2 flex flex-col justify-between transition-all duration-300 group ${
+                isDayMode
+                  ? 'bg-[#F7F6FB] border-[#E4DFF2] hover:border-[#7500EB] shadow-xs hover:shadow-lg hover:shadow-purple-500/10'
+                  : 'bg-[#111019] border-white/5 hover:border-[#8000FF] shadow-sm hover:shadow-lg hover:shadow-[#8000FF]/10'
+              }`}
             >
               <div>
                 <motion.span
                   whileInView={{ x: [0, 5, 0] }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 + idx * 0.08 }}
-                  className="text-sm font-mono-tech font-bold text-[#00F5A0] block mb-4 group-hover:scale-105 origin-left transition-transform"
+                  className={`text-sm font-mono-tech font-bold block mb-4 group-hover:scale-105 origin-left transition-transform ${
+                    isDayMode ? 'text-[#008F5B]' : 'text-[#00F5A0]'
+                  }`}
                 >
                   {item.number}
                 </motion.span>
 
-                <h3 className="font-display font-black text-2xl uppercase text-[#F4F3F7] mb-3 group-hover:text-[#00F5A0] transition-colors">
+                <h3
+                  className={`font-display font-black text-2xl uppercase mb-3 transition-colors ${
+                    isDayMode
+                      ? 'text-[#0A0713] group-hover:text-[#7500EB]'
+                      : 'text-[#F4F3F7] group-hover:text-[#00F5A0]'
+                  }`}
+                >
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-[#9F9CAE] leading-relaxed font-sans font-normal">
+                <p
+                  className={`text-xs leading-relaxed font-sans font-normal ${
+                    isDayMode ? 'text-[#625D73]' : 'text-[#9F9CAE]'
+                  }`}
+                >
                   {item.description}
                 </p>
               </div>
@@ -117,3 +147,4 @@ export const EventOutcomes: React.FC = () => {
     </section>
   );
 };
+
