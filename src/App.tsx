@@ -11,6 +11,7 @@ import { EventThemeDark } from './components/EventThemeDark';
 import { EventOverviewCards } from './components/EventOverviewCards';
 import { EventStudentStakeholders } from './components/EventStudentStakeholders';
 import { EventPartners } from './components/EventPartners';
+import { EventGallery } from './components/EventGallery';
 import { EventOutcomes } from './components/EventOutcomes';
 import { EventCTA } from './components/EventCTA';
 import { EventFooter } from './components/EventFooter';
@@ -107,6 +108,9 @@ function MainLayout() {
 
           {/* 9. Community Partners */}
           <EventPartners />
+
+          {/* 10. The Gallery / Session Recordings */}
+          <EventGallery />
 
           {/* 11. Deliverables & Outcomes */}
           <EventOutcomes />

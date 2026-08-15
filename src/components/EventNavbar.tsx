@@ -24,6 +24,7 @@ export const EventNavbar: React.FC = () => {
     { label: 'STUDENTS', href: '#students' },
     { label: 'COMMONS', href: '#commons' },
     { label: 'PROTOTYPES', href: '#action-layer' },
+    { label: 'GALLERY', href: '#gallery' },
     { label: 'OUTCOMES', href: '#outcomes' }
   ];
 
